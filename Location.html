@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+// record the user's house door location
+function recordPosition(){
+const successCallback = (position) =>{
+    console.log(position);
+};
+const errorCallback = (error) =>{
+    console.error(error);
+};
+
+const watchId1 = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
+    enableHighAccuracy: true,
+    timeout: 7000
+});
+
+}
+
+
+// record the user's current location
+function currentLocation(){
+const successCallback = (position) =>{
+    console.log(position);
+};
+const errorCallback = (error) =>{
+    console.error(error);
+};
+const watchId2 = navigator.geolocation.watchPosition(successCallback, errorCallback);
+}
+    </script>
+
+</body>
+</html>
