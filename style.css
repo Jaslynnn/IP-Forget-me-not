@@ -1,0 +1,47 @@
+@media only screen and (max-width: 670px) {
+
+    body{
+        background-color: #BCDDF3;
+    }
+.name{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+color: white;
+    margin-top: 70%;
+}
+
+.logIn{
+    display:flex;
+    justify-content: flex-end;
+    flex-direction: column;
+    margin-top: 10%;
+    margin:5%;
+    border-radius: 25px;
+    padding: 5%;
+    padding-top: 9%;
+    padding-bottom: 12%;
+    background-color: white;
+    color: #004674;
+
+}
+
+#forgotPassword{
+    font-size: 3.3vw;
+}
+
+#logIn{
+    background-color: #004674;
+    border-radius: 100px;
+    width: 100%;
+    
+}
+
+
+
+
+
+
+
+
+}
