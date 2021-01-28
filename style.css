@@ -8,29 +8,30 @@
     justify-content: center;
     align-items: center;
 color: white;
-    margin-top: 70%;
+    margin-top: 60%;
 }
 
 .logIn{
     display:flex;
-    justify-content: flex-end;
     flex-direction: column;
-    margin-top: 10%;
-    margin:5%;
+    margin-top:17%;
+    margin-right:4%;
+    margin-left:4%;
+    margin-bottom:-25%;
     border-radius: 25px;
     padding: 5%;
-    padding-top: 9%;
-    padding-bottom: 12%;
+    padding-top: 8%;
+    padding-bottom: 15%;
     background-color: white;
     color: #004674;
 
 }
 
-#forgotPassword{
-    font-size: 3.3vw;
+.smallFont{
+    font-size: 3.45vw;
 }
 
-#logIn{
+.buttonStretch{
     background-color: #004674;
     border-radius: 100px;
     width: 100%;
