@@ -14,10 +14,16 @@
     <title>Forget me not checklist</title>
 </head>
 
-<body> 
+<body>
+
 <div class="checklist">
-    <h3> Checklist</h3>
-    <div class="list">
+  <h3 id= title> Checklist(<span id="total-items"></span>)</h3> 
+    <div id="add-update-msg">
+			<div class="alert alert-success" role="alert">
+				Item successfully added to checklist
+			</div>
+    </div>
+    <div id="list">
 
     </div>
     <button class="open-button" onclick="openForm()"><h1>+</h1></button>
@@ -27,9 +33,9 @@
           <h3>Add Item <button type="button" class="btn cancel" onclick="closeForm()"><h2>x</h2></button></h3>  
           
 
-           <input type="text" class="form-control" aria-label="Text input with checkbox">
+           <input type="text" class="form-control" id= addingItem aria-label="Text input with checkbox">
       
-          <button type="submit" class="btn"><h2>+</h2></button>
+          <button type="submit" class="btn" id= addItem><h2>+</h2></button>
         </form>
       </div>
 
