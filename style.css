@@ -2,6 +2,10 @@
 h1{
     font-size:50px;
 }
+
+h2{
+  font-size: 25px;
+}
     body{
         background-color: #BCDDF3;
     }
@@ -85,6 +89,7 @@ padding-bottom: 5px;
 border-radius: 30px;
   padding: 15px;
   background-color: white;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 }
 
 /* Full-width textarea */
@@ -106,19 +111,31 @@ border-radius: 30px;
 
 /* Set a style for the submit/login button */
 .form-container .btn {
-  background-color: #4CAF50;
+  background-color: green;
   color: white;
-  padding: 16px 20px;
+border-radius: 35px;
   border: none;
   cursor: pointer;
-  width: 35%;
-  margin-bottom:10px;
+  width: 18%;
+  padding: 0;
+  padding-top: 1%;
+
+margin-left: 82%;
   opacity: 0.8;
+  margin-top: 6%;
+  text-align: center;
+  align-items: center;
 }
 
 /* Add a red background color to the cancel button */
 .form-container .cancel {
-  background-color: red;
+  width: 17%;
+  padding-top: -20px;
+
+  color: black;
+  background-color:white;
+  margin-left: 35%;
+  margin-top: -4%;
 }
 
 /* Add some hover effects to buttons */

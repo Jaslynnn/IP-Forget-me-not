@@ -24,13 +24,12 @@
 
     <div class="chat-popup" id="myForm">
         <form action="/action_page.php" class="form-container">
-          <h2>Add Item</h2>
+          <h3>Add Item <button type="button" class="btn cancel" onclick="closeForm()"><h2>x</h2></button></h3>  
+          
+
+           <input type="text" class="form-control" aria-label="Text input with checkbox">
       
-          <label for="msg"><b>Message</b></label>
-          <textarea placeholder="Type message.." name="msg" required></textarea>
-      
-          <button type="submit" class="btn">Add</button>
-          <button type="button" class="btn cancel" onclick="closeForm()">Close</button>
+          <button type="submit" class="btn"><h2>+</h2></button>
         </form>
       </div>
 
