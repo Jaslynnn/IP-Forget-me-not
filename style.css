@@ -1,239 +1,88 @@
-
-
-
-
-
-
-
-
-
-
-
-  h1{
-      font-size:50px;
-  }
-  
-  h2{
-    font-size: 25px;
-  }
-
-  h3{
-    font-size: 50px;
-    font-family: 'Pacifico', cursive;
-
-  }
-      body{
-          background-color: #B4BAD4;
-      }
-  .name{
-      display:flex;
-      justify-content: center;
-      align-items: center;
-  color: white;
-      margin-top: 60%;
-  }
-  
-  .logIn{
-      display:flex;
-      flex-direction: column;
-      margin-top:17%;
-      margin-right:4%;
-      margin-left:4%;
-      margin-bottom:-25%;
-      border-radius: 25px;
-      padding: 5%;
-      padding-top: 8%;
-      padding-bottom: 15%;
-      background-color: white;
-      color: #004674;
-  
-  }
-  
-  .smallFont{
-      font-size: 3.45vw;
-  }
-  
-  .buttonStretch{
-      background-color: #004674;
-      border-radius: 100px;
-      width: 100%;
-      
-  }
-  
-  
-  
-  /*Checklist page*/
-  #title{
-    width:100%;
-  }
-  
-  #add-update-msg{
-    margin-top: 10%;
-  
-    position: absolute;
-    z-index: 10;
-  }
-  .checklist{
-    display: flex;
-    margin-top: 5%;
-    margin-left: 10%;
-    padding:5%;
-  }
-  
-  
-  /* Button used to open the chat form - fixed at the bottom of the page */
-  .open-button {
-    background-color: #555;
-    color: white;
-   font-size: 50px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-  width: 20%; 
-  padding-bottom: 5px;
-    border-radius: 300px;
-  }
-  
-  /* The popup chat - hidden by default */
-  .form-popup {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-  }
-  
-  /* Add styles to the form container */
-  .form-container {
-    margin-top: 90%;
-    margin-right: 20%;
-    margin-left: -100%;
-  border-radius: 30px;
-    padding: 15px;
-    background-color: white;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-  }
-  
-  /* Full-width textarea */
-  .form-container textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-    resize: none;
-    min-height: 10px;
-  }
-  
-  /* When the textarea gets focus, do something */
-  .form-container textarea:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-  
-  /* Set a style for the submit/login button */
-  .form-container .btn {
-    background-color: green;
-    color: white;
-  border-radius: 35px;
-    border: none;
-    cursor: pointer;
-    width: 18%;
-    padding: 0;
-    padding-top: 1%;
-  
-  margin-left: 82%;
-    opacity: 0.8;
-    margin-top: 6%;
-    text-align: center;
-    align-items: center;
-  }
-  
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    width: 10%;
-    padding-top: -20px;
-    color: black;
-    background-color:white;
-    margin-left: 35%;
-    margin-top: -4%;
-  }
-  
-  /* Add some hover effects to buttons */
-  .form-container .btn:hover, .open-button:hover {
-    opacity: 1;
-  }
-  
-  
-  
-@media only screen and (max-width: 670px) {
-h1{
-    font-size:50px;
+html {
+  text-decoration: none;
+  scroll-behavior: smooth;
 }
 
-h2{
+h1 {
+  font-size: 50px;
+}
+
+h2 {
   font-size: 25px;
 }
-    body{
-        background-color: #B4BAD4;
-    }
-.name{
-    display:flex;
-    justify-content: center;
-    align-items: center;
-color: white;
-    margin-top: 60%;
-}
 
-.logIn{
-    display:flex;
-    flex-direction: column;
-    margin-top:17%;
-    margin-right:4%;
-    margin-left:4%;
-    margin-bottom:-25%;
-    border-radius: 25px;
-    padding: 5%;
-    padding-top: 8%;
-    padding-bottom: 15%;
-    background-color: white;
-    color: #212B57;
+h3 {
+  font-size: 50px;
+  font-family: 'Pacifico', cursive;
+  text-decoration: none;
 
 }
 
-.smallFont{
-    font-size: 3.45vw;
+p{
+  font-family: 'Roboto', sans-serif;
+  text-decoration: none;
 }
 
-.buttonStretch{
-    background-color: #212B57;
-    border-radius: 100px;
-    width: 100%;
-    
+body {
+  background-color: #B4BAD4;
+  text-decoration: none;
+}
+
+.name {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  margin-top: 60%;
+  text-decoration: none;
+}
+
+.logIn {
+  display: flex;
+  flex-direction: column;
+  margin-top: 17%;
+  margin-right: 4%;
+  margin-left: 4%;
+  margin-bottom: -25%;
+  border-radius: 25px;
+  padding: 5%;
+  padding-top: 8%;
+  padding-bottom: 15%;
+  background-color: white;
+  color: #004674;
+
+}
+
+.smallFont {
+  font-size: 3.45vw;
+}
+
+.buttonStretch {
+  background-color: #004674;
+  border-radius: 100px;
+  width: 100%;
+
 }
 
 
 
 /*Checklist page*/
-#title{
-  width:100%;
+#title {
+  width: 100%;
 }
 
-#add-update-msg{
+#add-update-msg {
   margin-top: 10%;
 
   position: absolute;
   z-index: 10;
 }
-.checklist{
+
+.checklist {
   display: flex;
   margin-top: 5%;
   margin-left: 10%;
-  padding:5%;
+  padding: 5%;
 }
 
 
@@ -241,15 +90,15 @@ color: white;
 .open-button {
   background-color: #555;
   color: white;
- font-size: 50px;
+  font-size: 50px;
   border: none;
   cursor: pointer;
   opacity: 0.8;
   position: fixed;
   bottom: 23px;
   right: 28px;
-width: 20%; 
-padding-bottom: 5px;
+  width: 20%;
+  padding-bottom: 5px;
   border-radius: 300px;
 }
 
@@ -268,7 +117,7 @@ padding-bottom: 5px;
   margin-top: 90%;
   margin-right: 20%;
   margin-left: -100%;
-border-radius: 30px;
+  border-radius: 30px;
   padding: 15px;
   background-color: white;
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
@@ -295,14 +144,14 @@ border-radius: 30px;
 .form-container .btn {
   background-color: green;
   color: white;
-border-radius: 35px;
+  border-radius: 35px;
   border: none;
   cursor: pointer;
   width: 18%;
   padding: 0;
   padding-top: 1%;
 
-margin-left: 82%;
+  margin-left: 82%;
   opacity: 0.8;
   margin-top: 6%;
   text-align: center;
@@ -314,15 +163,195 @@ margin-left: 82%;
   width: 10%;
   padding-top: -20px;
   color: black;
-  background-color:white;
+  background-color: white;
   margin-left: 35%;
   margin-top: -4%;
 }
 
 /* Add some hover effects to buttons */
-.form-container .btn:hover, .open-button:hover {
+.form-container .btn:hover,
+.open-button:hover {
   opacity: 1;
 }
+
+
+
+@media only screen and (max-width: 670px) {
+  h1 {
+    font-size: 50px;
+    text-decoration: none;
+  }
+
+  h2 {
+    font-size: 25px;
+    text-decoration: none;
+  }
+
+  h3 {
+    text-decoration: none;
+  }
+
+  body {
+    background-color: #B4BAD4;
+    text-decoration: none;
+  }
+
+  .name {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 60%;
+    text-decoration: none;
+
+  }
+
+  .link{
+    position: relative;
+    z-index: 30;
+  }
+
+  .logIn {
+    display: flex;
+    flex-direction: column;
+    margin-top: 17%;
+    margin-right: 4%;
+    margin-left: 4%;
+    margin-bottom: -25%;
+    border-radius: 25px;
+    padding: 5%;
+    padding-top: 8%;
+    padding-bottom: 15%;
+    background-color: white;
+    color: #212B57;
+    text-decoration: none;
+    font-family: 'Roboto', sans-serif;
+
+  }
+
+  .smallFont {
+    font-size: 3.45vw;
+    text-decoration: none;
+  }
+
+  .buttonStretch {
+    background-color: #212B57;
+    border-radius: 100px;
+    width: 100%;
+
+  }
+
+
+
+  /*Checklist page*/
+  #title {
+    width: 100%;
+  }
+
+  #add-update-msg {
+    margin-top: 10%;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    z-index: 10;
+  }
+
+  .checklist {
+    display: flex;
+    margin-top: 5%;
+    margin-left: 10%;
+    padding: 5%;
+  }
+
+
+  /* Button used to open the chat form - fixed at the bottom of the page */
+  .open-button {
+    background-color: #555;
+    color: white;
+    font-size: 50px;
+    border: none;
+    cursor: pointer;
+    opacity: 0.8;
+    position: fixed;
+    bottom: 23px;
+    right: 28px;
+    width: 20%;
+    padding-bottom: 5px;
+    border-radius: 300px;
+  }
+
+  /* The popup chat - hidden by default */
+  .form-popup {
+    display: none;
+    position: fixed;
+    bottom: 0;
+    right: 15px;
+    border: 3px solid #f1f1f1;
+    z-index: 9;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* Add styles to the form container */
+  .form-container {
+    margin-top: 90%;
+    margin-right: 20%;
+    margin-left: -100%;
+    border-radius: 30px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+  }
+
+  /* Full-width textarea */
+  .form-container textarea {
+    width: 100%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    border: none;
+    background: #f1f1f1;
+    resize: none;
+    min-height: 10px;
+    font-family: 'Roboto', sans-serif;
+  }
+
+  /* When the textarea gets focus, do something */
+  .form-container textarea:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+
+  /* Set a style for the submit/login button */
+  .form-container .btn {
+    background-color: green;
+    color: white;
+    border-radius: 35px;
+    border: none;
+    cursor: pointer;
+    width: 18%;
+    padding: 0;
+    padding-top: 1%;
+
+    margin-left: 82%;
+    opacity: 0.8;
+    margin-top: 6%;
+    text-align: center;
+    align-items: center;
+  }
+
+  /* Add a red background color to the cancel button */
+  .form-container .cancel {
+    width: 10%;
+    padding-top: -20px;
+    color: black;
+    background-color: white;
+    margin-left: 35%;
+    margin-top: -4%;
+  }
+
+  /* Add some hover effects to buttons */
+  .form-container .btn:hover,
+  .open-button:hover {
+    opacity: 1;
+  }
 
 
 
