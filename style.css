@@ -18,7 +18,7 @@ h3 {
 
 }
 
-p{
+p {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
 }
@@ -102,6 +102,9 @@ body {
   border-radius: 300px;
 }
 
+#myForm{
+  display: none;
+}
 /* The popup chat - hidden by default */
 .form-popup {
   display: none;
@@ -114,6 +117,7 @@ body {
 
 /* Add styles to the form container */
 .form-container {
+  display: hidden;
   margin-top: 90%;
   margin-right: 20%;
   margin-left: -100%;
@@ -189,11 +193,53 @@ body {
 
   h3 {
     text-decoration: none;
+    color: white;
   }
 
   body {
     background-color: #B4BAD4;
     text-decoration: none;
+  }
+
+  .navbar {
+    border-radius: 200px;
+    background-color: black;
+    padding: 2%;
+    margin: 2%;
+    margin-right: 4%;
+
+    overflow: hidden;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+  }
+
+  /* Style the links inside the navigation bar */
+  .navbar a {
+    float: left;
+    display: block;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  /* Change the color of links on hover */
+  .navbar a:hover {
+    border-radius: 200px;
+    background-color: grey;
+    color: white;
+  }
+
+  /* Add a color to the active/current link */
+  .navbar a.active {
+    height: 60px;
+    border-radius: 200px;
+    background-color: #B4BAD4;
+    position: relative;
+    z-index: 10;
+    color: black;
   }
 
   .name {
@@ -206,7 +252,7 @@ body {
 
   }
 
-  .link{
+  .link {
     position: relative;
     z-index: 30;
   }
@@ -241,118 +287,194 @@ body {
 
   }
 
-
-
-  /*Checklist page*/
-  #title {
-    width: 100%;
+  /*home page*/
+  .firstPage {
+    text-align: center;
   }
 
-  #add-update-msg {
-    margin-top: 10%;
-    font-family: 'Roboto', sans-serif;
-    position: absolute;
-    z-index: 10;
+  .homePlant {
+    width: 80%;
+    border-radius: 500px;
+    justify-content: center;
   }
 
-  .checklist {
-    display: flex;
-    margin-top: 5%;
-    margin-left: 10%;
-    padding: 5%;
-  }
-
-
-  /* Button used to open the chat form - fixed at the bottom of the page */
-  .open-button {
-    background-color: #555;
-    color: white;
-    font-size: 50px;
-    border: none;
-    cursor: pointer;
-    opacity: 0.8;
-    position: fixed;
-    bottom: 23px;
-    right: 28px;
-    width: 20%;
-    padding-bottom: 5px;
-    border-radius: 300px;
-  }
-
-  /* The popup chat - hidden by default */
-  .form-popup {
-    display: none;
-    position: fixed;
-    bottom: 0;
-    right: 15px;
-    border: 3px solid #f1f1f1;
-    z-index: 9;
-    font-family: 'Roboto', sans-serif;
-  }
-
-  /* Add styles to the form container */
-  .form-container {
-    margin-top: 90%;
-    margin-right: 20%;
-    margin-left: -100%;
-    border-radius: 30px;
-    padding: 15px;
+  .care {
     background-color: white;
+    border-radius: 200px;
+    overflow: hidden;
+    position: fixed;
+    margin-bottom: 30%;
+    bottom: 0;
+    color: #212B57;
+    font-size: 19px;
+  }
+
+  .careInstructions {
+    display: flex;
+    justify-content: flex-end;
+    margin-right:5%;
+    text-align: center;
+    display: hidden;
+  }
+#label{
+  display: none;
+}
+  .instructions {
+    margin-top: 10%;
+    padding: 2%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: white;
+    border-radius: 25px;
+    width: 60%;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   }
 
-  /* Full-width textarea */
-  .form-container textarea {
-    width: 100%;
-    padding: 15px;
-    margin: 5px 0 22px 0;
-    border: none;
-    background: #f1f1f1;
-    resize: none;
-    min-height: 10px;
-    font-family: 'Roboto', sans-serif;
-  }
-
-  /* When the textarea gets focus, do something */
-  .form-container textarea:focus {
-    background-color: #ddd;
-    outline: none;
-  }
-
-  /* Set a style for the submit/login button */
-  .form-container .btn {
-    background-color: green;
+  .home {
+    background-color: black;
+    border-radius: 300px;
     color: white;
-    border-radius: 35px;
-    border: none;
-    cursor: pointer;
-    width: 18%;
-    padding: 0;
-    padding-top: 1%;
+    font-size: 17px;
+    width: 100%;
 
-    margin-left: 82%;
-    opacity: 0.8;
-    margin-top: 6%;
-    text-align: center;
-    align-items: center;
   }
-
-  /* Add a red background color to the cancel button */
-  .form-container .cancel {
-    width: 10%;
-    padding-top: -20px;
-    color: black;
-    background-color: white;
-    margin-left: 35%;
-    margin-top: -4%;
-  }
-
-  /* Add some hover effects to buttons */
-  .form-container .btn:hover,
-  .open-button:hover {
-    opacity: 1;
-  }
-
-
-
+/*MarketPlace page*/
+.collection{
+  padding-top: 7%;
+  padding-left: 5%;
 }
+
+.window{
+  display: flex;
+  flex-direction: column;
+  background-color: white;
+  margin: 3%;
+  padding: 5%;
+  width: 35%;
+  height: 150px;
+  border-radius: 25px;
+  float: left;
+}
+
+#bigWord{
+  text-align: center;
+  position: fixed;
+  z-index: 5;
+  right:0;
+  margin-right: 5%;
+}
+    /*Checklist page*/
+   #titled{
+      width: 100%;
+    }
+
+    #add-update-msg {
+      margin-top: 10%;
+      font-family: 'Roboto', sans-serif;
+      position: absolute;
+      z-index: 10;
+    }
+
+    .checklist {
+      display: flex;
+      margin-top: 5%;
+      margin-left: 10%;
+      padding: 5%;
+    }
+
+
+    /* Button used to open the chat form - fixed at the bottom of the page */
+    .open-button {
+      background-color: #555;
+      color: white;
+      font-size: 50px;
+      border: none;
+      cursor: pointer;
+      opacity: 0.8;
+      position: fixed;
+      bottom: 80px;
+      right: 28px;
+      width: 20%;
+      padding-bottom: 5px;
+      border-radius: 300px;
+    }
+
+    /* The popup chat - hidden by default */
+    .form-popup {
+      display: none;
+      position: fixed;
+      bottom: 0;
+      right: 15px;
+      border: 3px solid #f1f1f1;
+      z-index: 9;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* Add styles to the form container */
+    .form-container {
+      display: hidden;
+      margin-top: 90%;
+      margin-right: 20%;
+      margin-left: -100%;
+      border-radius: 30px;
+      padding: 15px;
+      background-color: white;
+      box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    }
+
+    /* Full-width textarea */
+    .form-container textarea {
+      width: 100%;
+      padding: 15px;
+      margin: 5px 0 22px 0;
+      border: none;
+      background: #f1f1f1;
+      resize: none;
+      min-height: 10px;
+      font-family: 'Roboto', sans-serif;
+    }
+
+    /* When the textarea gets focus, do something */
+    .form-container textarea:focus {
+      background-color: #ddd;
+      outline: none;
+    }
+
+    /* Set a style for the submit/login button */
+    .form-container .btn {
+      background-color: green;
+      color: white;
+      border-radius: 35px;
+      border: none;
+      cursor: pointer;
+      width: 18%;
+      padding: 0;
+      padding-top: 1%;
+
+      margin-left: 82%;
+      opacity: 0.8;
+      margin-top: 6%;
+      text-align: center;
+      align-items: center;
+    }
+
+    /* Add a red background color to the cancel button */
+    .form-container .cancel {
+      width: 10%;
+      padding-top: -20px;
+      color: black;
+      background-color: white;
+      margin-left: 35%;
+      margin-top: -4%;
+    }
+
+    /* Add some hover effects to buttons */
+    .form-container .btn:hover,
+    .open-button:hover {
+      opacity: 1;
+    }
+
+
+
+  }

@@ -1,9 +1,53 @@
+
+
+
+
+// record the user's house door location 
+function recordPosition(){
+  const successCallback = (position) =>{
+      console.log(position);
+  };
+  const errorCallback = (error) =>{
+      console.error(error);
+  };
+  
+  const watchId1 = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
+      enableHighAccuracy: true,
+      timeout: 7000
+  });
+  
+  }
+  
+  
+  // record the user's current location
+  function currentLocation(){
+  const successCallback = (position) =>{
+      console.log(position);
+  };
+  const errorCallback = (error) =>{
+      console.error(error);
+  };
+  const watchId2 = navigator.geolocation.watchPosition(successCallback, errorCallback);
+  }
+
+
+
+
+//Checklist page
 function openForm() {
   document.getElementById("myForm").style.display = "block";
 }
 
 function closeForm() {
   document.getElementById("myForm").style.display = "none";
+}
+
+function openInstructions() {
+  document.getElementById("label").style.display = "block";
+}
+
+function closeInstructions() {
+  document.getElementById("label").style.display = "none";
 }
 
 $(document).ready(function () {
