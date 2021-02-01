@@ -201,18 +201,39 @@ body {
     text-decoration: none;
   }
 
+  .position{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
   .navbar {
-    border-radius: 200px;
-    background-color: black;
-    padding: 2%;
+    background-color: none;
+    padding: 5%;
     margin: 2%;
     margin-right: 4%;
-
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    width: 100%;
+    width: 90%;
+    z-index: -10;
+    
   }
+  
+.behindNav{
+  background-color: white;
+  overflow: hidden;
+  position: fixed;
+  bottom: 0;
+  z-index: -20;
+  width: 90%;
+  height: 50px;  
+  border-radius: 200px;
+  margin: 2%;
+
+}
+
 
   /* Style the links inside the navigation bar */
   .navbar a {
@@ -230,16 +251,25 @@ body {
     border-radius: 200px;
     background-color: grey;
     color: white;
+
+
   }
 
   /* Add a color to the active/current link */
-  .navbar a.active {
-    height: 60px;
+ a.active{
+    height: 3px;
+    width: 70px;
     border-radius: 200px;
-    background-color: #B4BAD4;
+    background-color: white;
+    border:12px solid;
+    border-color: #B4BAD4;
     position: relative;
     z-index: 10;
     color: black;
+    padding: 10px 16px;
+    padding-bottom: 13%;
+    margin-bottom: 0px;    
+
   }
 
   .name {
