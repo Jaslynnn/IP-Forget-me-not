@@ -75,7 +75,7 @@ $(document).ready(function () {
       "async": true,
       "crossDomain": true,
       "url": "https://forgetmenot-7aac.restdb.io/rest/checklist",
-      "method": "GET", //[cher] we will use GET to retrieve info
+      "method": "GET", // use GET to retrieve info
       "headers": {
         "content-type": "application/json",
         "x-apikey": APIKEY,
@@ -87,7 +87,7 @@ $(document).ready(function () {
       let content = "";
 
       for (var i = 0; i < response.length && i < limit; i++) {
-        content = `${response[i].item}`
+        content = `${response[i].checklist}`
 
       }
 
