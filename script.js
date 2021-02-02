@@ -50,10 +50,51 @@ function closeInstructions() {
   document.getElementById("label").style.display = "none";
 }
 
+
+function init() {
+    if (localStorage.Checklist) {
+      document.getElementById("list").value = localStorage.Checklist;
+    }
+  }
+
+
+
+
 $(document).ready(function () {
+/* using arrays to create checklist*/
+$("#add-update-msg").hide();
 
 
-  const APIKEY = "60150aff6adfba69db8b6b87";
+
+$("#addItem").click(function(e){
+  
+  e.preventDefault(); 
+let items= localStorage.getItem("Checklist")
+let checklist =[items];
+checklist.forEach(retreival);
+  
+function retreival() {
+let Item = document.getElementById("addingItem").value
+checklist.push(Item);
+localStorage.setItem("Checklist", checklist); 
+}
+
+
+
+
+document.getElementById("list").innerHTML += localStorage.getItem("Checklist")
+/*for (var i = 0; i < ChecklistR.length; i++) {
+
+  document.getElementById("list").innerHTML += 
+`<p> ${ChecklistR}</p> `  
+  }*/
+$("#add-update-msg").show().fadeOut(3000);
+
+})
+
+
+
+  /*const APIKEY = "60150aff6adfba69db8b6b87";
   updateList()
   $("#add-update-msg").hide();
 
@@ -143,7 +184,7 @@ $(document).ready(function () {
 
   
 
-
+*/
 
 })
 

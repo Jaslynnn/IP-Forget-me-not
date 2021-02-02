@@ -18,22 +18,24 @@
     <title>Forget me not checklist</title>
 </head>
 
-<body>
+<body onload = init()>
 
 <div class="checklist">
   <h4 id = titled> Checklist(<span id="total-items"></span>)</h4> 
+  
     <div id="add-update-msg">
 			<div class="alert alert-success" role="alert">
 				Item successfully added to checklist
 			</div>
     </div>
+    <br>
     <div id="list">
 
     </div>
     <button class="open-button" onclick="openForm()"><h1>+</h1></button>
 
     <div class="chat-popup" id="myForm">
-        <form action="/action_page.php" class="form-container">
+        <form class="form-container">
           <h4>Add Item <button type="button" class="btn cancel" onclick="closeForm()"><h2>x</h2></button></h4>  
           
 
