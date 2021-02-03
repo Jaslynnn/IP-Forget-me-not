@@ -78,11 +78,28 @@ body {
   width: 100%;
 }
 
+.alert{
+background-color: pink;
+border-radius: 25px;
+}
+
 #add-update-msg {
   margin-top: 10%;
+  position: absolute;
+  text-align: center;
+  z-index: 5;
+  width: 80%;
+  margin-right: 20%;
+  margin-left: -8%;
+}
 
+#add-coin-msg {
+  margin-top: 40%;
   position: absolute;
   z-index: 10;
+  border-radius: 25px;
+  text-align: center;
+ margin-right: 20%;
 }
 
 .checklist {
