@@ -1,34 +1,30 @@
-
-
-
-
 // record the user's house door location 
-function recordPosition(){
-  const successCallback = (position) =>{
-      console.log(position);
+function recordPosition() {
+  const successCallback = (position) => {
+    console.log(position);
   };
-  const errorCallback = (error) =>{
-      console.error(error);
+  const errorCallback = (error) => {
+    console.error(error);
   };
-  
+
   const watchId1 = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
-      enableHighAccuracy: true,
-      timeout: 7000
+    enableHighAccuracy: true,
+    timeout: 7000
   });
-  
-  }
-  
-  
-  // record the user's current location
-  function currentLocation(){
-  const successCallback = (position) =>{
-      console.log(position);
+
+}
+
+
+// record the user's current location
+function currentLocation() {
+  const successCallback = (position) => {
+    console.log(position);
   };
-  const errorCallback = (error) =>{
-      console.error(error);
+  const errorCallback = (error) => {
+    console.error(error);
   };
   const watchId2 = navigator.geolocation.watchPosition(successCallback, errorCallback);
-  }
+}
 
 
 
@@ -52,47 +48,61 @@ function closeInstructions() {
 
 
 function init() {
-    if (localStorage.Checklist) {
-      document.getElementById("list").value = localStorage.Checklist;
-    }
+  if (localStorage.Checklist) {
+    document.getElementById("list").value = localStorage.Checklist;
   }
-
-
-
-
-$(document).ready(function () {
-/* using arrays to create checklist*/
-$("#add-update-msg").hide();
-
-
-
-$("#addItem").click(function(e){
-  
-  e.preventDefault(); 
-let items= localStorage.getItem("Checklist")
-let checklist =[items];
-checklist.forEach(retreival);
-  
-function retreival() {
-let Item = document.getElementById("addingItem").value
-checklist.push(Item);
-localStorage.setItem("Checklist", checklist); 
 }
 
 
 
 
-document.getElementById("list").innerHTML += localStorage.getItem("Checklist")
-/*for (var i = 0; i < ChecklistR.length; i++) {
-
-  document.getElementById("list").innerHTML += 
-`<p> ${ChecklistR}</p> `  
-  }*/
-$("#add-update-msg").show().fadeOut(3000);
-
-})
+$(document).ready(function () {
+  /* using arrays to create checklist*/
+  $("#add-update-msg").hide();
 
 
+
+  $("#addItem").click(function (e) {
+
+    e.preventDefault();
+    let items = localStorage.getItem("Checklist")
+    let checklist = [items];
+    checklist.forEach(retreival);
+
+    function retreival() {
+      let Item = document.getElementById("addingItem").value
+      checklist.push(Item);
+      localStorage.setItem("Checklist", checklist);
+    }
+    document.getElementById("list").innerHTML = checklist
+
+
+
+    for (var i = 0; i < checklist.length; i++) {
+      document.getElementById("list").innerHTML +=
+        ` ${checklist[i]} ${i} <br> `
+    }
+
+    $("#add-update-msg").show().fadeOut(3000);
+
+  })
+
+
+  /* function to add points*/
+
+  $("#addPoints").click(function (e) {
+    e.preventDefault();
+    addition()
+
+    function addition() {
+      let points = localStorage.getItem("Points")
+      let newPoints = points + 5
+      localStorage.setItem("points", newPoints);
+      document.getElementById("points").innerHTML = newPoints
+    }
+
+
+  })
 
   /*const APIKEY = "60150aff6adfba69db8b6b87";
   updateList()
@@ -187,4 +197,3 @@ $("#add-update-msg").show().fadeOut(3000);
 */
 
 })
-

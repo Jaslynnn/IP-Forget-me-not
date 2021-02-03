@@ -2,69 +2,88 @@
 <html lang="en">
 
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Required meta tags -->
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" href="style.css" />
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    
-    <title>Forget me not checklist</title>
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+  <link rel="stylesheet" type="text/css" href="style.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
+  <title>Forget me not checklist</title>
 </head>
 
-<body onload = init()>
+<body onload=init()>
+  <div class="water">
+    <div id=points> </div>
+    <div class=icon>water</div>
+  </div>
+  <div class="checklist">
 
-<div class="checklist">
-  <h4 id = titled> Checklist(<span id="total-items"></span>)</h4> 
-  
+
     <div id="add-update-msg">
-			<div class="alert alert-success" role="alert">
-				Item successfully added to checklist
-			</div>
+      <div class="alert alert-success" role="alert">
+        Item successfully added to checklist
+      </div>
     </div>
-    <br>
+    <h1 id=bigWord>C<br>
+      H<br>
+      E<br>
+      C<br>
+      K<br>
+      L<br>
+      I<br>
+      S<br>
+      T<br>
+
+    </h1>
     <div id="list">
 
+      asdfa
+
     </div>
-    <button class="open-button" onclick="openForm()"><h1>+</h1></button>
+    <button class="open-button" onclick="openForm()">
+      <h1>+</h1>
+    </button>
 
     <div class="chat-popup" id="myForm">
-        <form class="form-container">
-          <h4>Add Item <button type="button" class="btn cancel" onclick="closeForm()"><h2>x</h2></button></h4>  
-          
+      <form class="form-container">
+        <h4>Add Item <button type="button" class="btn cancel" onclick="closeForm()">
+            <h2>x</h2>
+          </button></h4>
 
-           <input type="text" class="form-control" id= addingItem aria-label="Text input with checkbox">
-      
-          <button type="submit" class="btn" id= addItem><h2>+</h2></button>
-        </form>
-      </div>
+        <input type="text" class="form-control" id=addingItem aria-label="Text input with checkbox">
 
-</div>
-<div class="position">
+        <button type="submit" class="btn" id=addItem>
+          <h2>+</h2>
+        </button>
+      </form>
+    </div>
+  </div>
+  <div class="position">
+    <button type="button" id=addPoints class="btn care">Yes I have brought everything.</button>
+    <div class="navbar">
+      <a href="home.html">H</a>
+      <a href="Marketplace.html">M</a>
+      <a href="checklist.html" class="active">C</a>
+    </div>
+    <div class="behindNav">
 
-<div class="navbar">
-  <a href="home.html" >H</a>
-  <a href="Marketplace.html">M</a>
-  <a href="checklist.html"class="active">C</a>
-</div>
-<div class="behindNav">
+    </div>
 
-</div>
-
-</div>
+  </div>
 
 
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-<script src="script.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="script.js"></script>
 
 </body>
 

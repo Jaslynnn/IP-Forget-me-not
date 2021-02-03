@@ -1,3 +1,10 @@
+* {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+
+
 html {
   text-decoration: none;
   scroll-behavior: smooth;
@@ -101,7 +108,9 @@ body {
   padding-bottom: 5px;
   border-radius: 300px;
 }
-
+.chat-popup{
+  display: none;
+}
 #myForm{
   display: none;
 }
@@ -217,7 +226,7 @@ body {
     position: fixed;
     bottom: 0;
     width: 90%;
-    z-index: -10;
+    z-index: 1;
     
   }
   
@@ -371,8 +380,15 @@ body {
   }
 /*MarketPlace page*/
 .collection{
-  padding-top: 7%;
   padding-left: 5%;
+}
+
+.water{
+  background-color: white;
+  width: 30%;
+  border-radius: 25px;
+  text-align: center;
+  margin: 5%;
 }
 
 .window{
@@ -395,9 +411,8 @@ body {
   margin-right: 5%;
 }
     /*Checklist page*/
-   #titled{
-      width: 100%;
-    }
+  
+
 
     #add-update-msg {
       margin-top: 10%;
@@ -407,12 +422,21 @@ body {
     }
 
     .checklist {
-      display: flex;
-      margin-top: 5%;
-      margin-left: 10%;
-      padding: 5%;
+margin-top: -10%;
+  
+
     }
 
+    #list{
+      padding: 5%;
+      border-radius: 25px;
+      background-color: white;
+      width: 80%;
+      height: 90%;
+      margin-top: 7%;
+      left: 0;
+      margin-left: -5%;
+    }
 
     /* Button used to open the chat form - fixed at the bottom of the page */
     .open-button {
@@ -428,6 +452,7 @@ body {
       width: 20%;
       padding-bottom: 5px;
       border-radius: 300px;
+      z-index: 2;
     }
 
     /* The popup chat - hidden by default */
@@ -444,11 +469,10 @@ body {
     /* Add styles to the form container */
     .form-container {
       display: hidden;
-      margin-top: 90%;
-      margin-right: 20%;
-      margin-left: -100%;
-      border-radius: 30px;
+      position: absolute;
       padding: 15px;
+      top: 0;
+      right: 0;
       background-color: white;
       box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
     }
