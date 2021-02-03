@@ -93,15 +93,6 @@ $(document).ready(function () {
   $("#addPoints").click(function (e) {
     e.preventDefault();
     addition()
-
-    function addition() {
-      let points = localStorage.getItem("Points")
-      let newPoints = points + 5
-      localStorage.setItem("points", newPoints);
-      document.getElementById("points").innerHTML = newPoints
-    }
-
-
   })
 
   /*const APIKEY = "60150aff6adfba69db8b6b87";
@@ -196,4 +187,31 @@ $(document).ready(function () {
 
 */
 
+
 })
+
+function addition() {
+  
+  let points = localStorage.getItem("Points")   
+
+  if(isNaN(points)){
+    let points = 0
+    localStorage.setItem("Points", points);
+    let oldpoints = localStorage.getItem("Points")    
+    let oldPoints = parseInt(oldpoints)
+    let newPoints = oldPoints + parseInt("5")
+    localStorage.setItem("Points", newPoints);
+    document.getElementById("points").innerHTML = newPoints
+
+  }else{
+
+  localStorage.setItem("Points", points);
+  let oldpoints = localStorage.getItem("Points")    
+  let oldPoints = parseInt(oldpoints)
+  let newPoints = oldPoints + parseInt("5")
+  localStorage.setItem("Points", newPoints);
+  document.getElementById("points").innerHTML = newPoints
+}
+
+
+}
