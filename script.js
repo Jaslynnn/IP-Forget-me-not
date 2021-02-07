@@ -9,6 +9,9 @@ for (var i = 0; i < checklist.length; i++) {
     ` ${checklist[i]} ${i}  `
 }
 
+document.getElementById("myForm").style.display = "none";
+
+
 function recordPosition() {
   const successCallback = (position) => {
     console.log(position);
@@ -48,20 +51,10 @@ function closeForm() {
   document.getElementById("myForm").style.display = "none";
 }
 
-function openInstructions() {
-  document.getElementById("label").style.display = "block";
-}
-
-function closeInstructions() {
-  document.getElementById("label").style.display = "none";
-}
 
 
-function init() {
-  if (localStorage.Checklist) {
-    document.getElementById("list").value = localStorage.Checklist;
-  }
-}
+
+
 
 
 
@@ -95,7 +88,7 @@ $(document).ready(function () {
         ` ${checklist[i]} ${i} <br> `
     }
 
-    $("#add-update-msg").show().fadeOut(3000);
+    $("#add-update-msg").show().fadeOut(4000);
 
   })
 
@@ -105,7 +98,7 @@ $(document).ready(function () {
   $("#addPoints").click(function (e) {
     e.preventDefault();
     addition()
-    $("#add-coin-msg").show().fadeOut(3000);
+    $("#add-coin-msg").show().fadeOut(4000);
   })
 
  
@@ -123,7 +116,7 @@ function addition() {
     let oldPoints = parseInt(oldpoints)
     let newPoints = oldPoints + parseInt("5")
     localStorage.setItem("Points", newPoints);
-    document.getElementById("points").innerHTML = newPoints
+    document.getElementById("points").innerHTML += newPoints
 
   }else{
 

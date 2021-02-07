@@ -331,6 +331,29 @@ padding-left: 35px;
 
   }
 
+  .coins2 {
+
+    background-color: white;
+    border-radius: 12px;
+    text-align: center;
+ margin-left: 3%;
+    width: 50px;
+    float: left;
+    margin-right: 10%;
+
+  }
+
+  
+  .inventory2 {
+    display: flex;
+justify-content: center;
+align-items: center;
+    border-radius: 12px;
+    background-color: white;
+    width: 70%;
+    height: 50px;
+  }
+
   .window {
     display: flex;
     flex-direction: column;
@@ -343,13 +366,7 @@ padding-left: 35px;
     float: left;
   }
 
-  #bigWord {
-    text-align: center;
-    position: fixed;
-    z-index: 5;
-    right: 0;
-    margin-right: 5%;
-  }
+
 
   /*Checklist page*/
 
@@ -357,26 +374,40 @@ padding-left: 35px;
 
   #add-update-msg {
     margin-top: 10%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    z-index: 5;
+    background-color: #CDB4D4;
+  }
+
+  #add-coin-msg {
+    margin-top: 10%;
+    text-align: center;
     font-family: 'Roboto', sans-serif;
     position: absolute;
     z-index: 10;
-  }
+    background-color: #FFBD89;
 
+  }
+.alert{
+  padding-bottom: 0;
+}
   .checklist {
-    margin-top: -10%;
+ text-align: center;
 
 
   }
 
   #list {
+  text-align: left;
     padding: 5%;
     border-radius: 25px;
     background-color: white;
-    width: 80%;
-    height: 90%;
+    min-height: 600px;
     margin-top: 7%;
-    left: 0;
-    margin-left: -5%;
+
+
   }
 
   /* Button used to open the chat form - fixed at the bottom of the page */
