@@ -269,6 +269,9 @@ padding-left: 35px;
   background-color: white;
   border-radius: 25px;
   height:100px;
+  text-decoration: none;
+  display: block;
+  color: #212B57;
 }
 .arrow{
   text-align: right;
