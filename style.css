@@ -13,7 +13,7 @@ html {
 
 @media only screen and (max-width: 670px) {
   h1 {
-    font-size: 50px;
+    font-size: 40px;
     text-decoration: none;
   }
 
@@ -323,7 +323,7 @@ padding-left: 35px;
   }
 
 
-  .water {
+  .coins {
     background-color: white;
     border-radius: 12px;
     text-align: center;
@@ -501,6 +501,13 @@ align-items: center;
     opacity: 1;
   }
 
+/* Settings page */
+
+.home{
+  width: 25%;
+  margin-left: 5%;
+
+}
 
 
 }

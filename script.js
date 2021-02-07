@@ -3,10 +3,11 @@
 let points = localStorage.getItem("Points")  
 document.getElementById("points").innerHTML = points
 
-let checklist = localStorage.getItem("Checklist")  
-for (var i = 0; i < checklist.length; i++) {
+let checklist = localStorage.getItem("Checklist")
+var checklistArr = checklist.split(',');
+for (var i = 1; i < checklistArr.length; i++) {
   document.getElementById("list").innerHTML +=
-    ` ${checklist[i]} ${i}  `
+    ` ${i} ${checklistArr[i] } <br>   `
 }
 
 document.getElementById("myForm").style.display = "none";
@@ -79,14 +80,8 @@ $(document).ready(function () {
       localStorage.setItem("Checklist", checklist);
     }
 
-    document.getElementById("list").innerHTML = checklist
+  displayChecklist()
 
-
-
-    for (var i = 0; i < checklist.length; i++) {
-      document.getElementById("list").innerHTML +=
-        ` ${checklist[i]} ${i} <br> `
-    }
 
     $("#add-update-msg").show().fadeOut(4000);
 
@@ -104,6 +99,15 @@ $(document).ready(function () {
  
 
 })
+function displayChecklist(){
+    let checklist = localStorage.getItem("Checklist")
+    var checklistArr = checklist.split(',');
+    let i = checklistArr.length - 1
+    let lastItem = checklistArr[checklistArr.length-1]
+      document.getElementById("list").innerHTML +=
+        ` ${i} ${lastItem } <br>   `
+
+  }
 
 function addition() {
 
