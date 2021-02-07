@@ -11,68 +11,81 @@
         integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="style.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Jost&display=swap" rel="stylesheet">
     <title>Forget me not Home</title>
 </head>
 
 <body>
-    <div class="water">
-        <div id = points>0</div>
-        <div class= icon>coins</div>
-    </div>
-    <div class="firstPage">
-  
-    <img class= homePlant src="images/gudetama christmas.jpg" alt="Italian Trulli">
-<br></br>
-    <h3>Forget me <br> not</h3>
-    
-  
-<div class="careInstructions">
-    
-    <button type="button" class="btn care"onclick="openInstructions()">Care Instructions</button>
+    <div class="content">
+        <div class="time">
+            <h2>Good Morning</h2>
+            <div class="exactTime">8.46 am</div>
+        </div>
+        <div class="currentLocation">
+            Allow tracking of current location
+            <!-- Rounded switch -->
+            <label class="switch">
+                <input type="checkbox">
+                <span class="slider round"></span>
+            </label>
+        </div>
 
-    <div class="instructions" id="label">
+        <div class="middle">
+            <div class="assets">
+                <div class="water">
+                    <div id=points>0</div>
+                    <div class=icon>coins</div>
+                </div>
+
+                <div class="inventory">
+                    Inventory
+                </div>
+            </div>
+           
+            <div class="firstPage"> 
+                <h4>Plants</h4>
+                <div class=homePlant></div>  
+                <br></br>
+
+
+            </div>
+
+            <div class="checklistSmall">
+<h2>Checklist</h2>
+<div class="arrow">
+    > 
+</div>
+            </div>
+           
+                <div class="behindNav">
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="position">
+            <div class="navbar">
+                <a href="home.html" class="active">H</a>
+                <a href="Marketplace.html">M</a>
+                <a href="checklist.html">C</a>
+                <a href="checklist.html">S</a>
         
-         
-           <h4>Check items off
-               <br> Get rewards 
-               <br>Plant
-           </h4>
-      <button type="button" class="btn home" onclick="closeInstructions()">Got it</button> 
-        </form>
-      </div>
 
+            </div>
+            <div class="behindNav">
 
-      <div class="behindNav">
-    
+            </div>
+
+        </div>
     </div>
-
-</div>
-
-</div>
-
-<div class="position">
-<div class="navbar">
-  <a href="home.html" class="active">H</a>
-  <a href="Marketplace.html">M</a>
-  <a href="checklist.html">C</a>
-
-</div>
-<div class="behindNav">
-
-  </div>
-
-</div>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="script.js"></script>
-    
-    </body>
-    
-    </html>
+
+</body>
+
+</html>
