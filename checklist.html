@@ -15,8 +15,7 @@
   <title>Forget me not checklist</title>
 </head>
 
-<body onload = 
-displayChecklist()>
+<body onload = "displayExistingChecklist()">
 <div class="content">
   <div class="coins2">
       <div id=points>0</div>
@@ -44,9 +43,11 @@ displayChecklist()>
 
 
     </div>
- <div id="list">You currently do not have anything in your checklist.</div>
+ <div id="list"> 
+   <h5><div id="totalItems"></div> items in your checklist <br></h5></div>
+
 </div>
-   
+  
     </div>
     
     <button class="open-button" onclick="openForm()">

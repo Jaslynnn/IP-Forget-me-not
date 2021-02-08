@@ -1,13 +1,18 @@
+//Id consultation
+//How to make the toggle stay in the same state and 
+//the location to be constantly recorded when surfing the whole application 
+
+
 //Display the existing data 
 let points = localStorage.getItem("Points")
 document.getElementById("points").innerHTML = points
 //function to display all statistics like water, plants and coins
-function existing(){
-  waterCount= localStorage.getItem("Water")
+function existing() {
+  waterCount = localStorage.getItem("Water")
   document.getElementById("waterCount").innerHTML = waterCount
-  waterCount= localStorage.getItem("Points")
+  waterCount = localStorage.getItem("Points")
   document.getElementById("points").innerHTML = waterCount
-  waterCount= localStorage.getItem("Plants")
+  waterCount = localStorage.getItem("Plants")
   document.getElementById("plantsCount").innerHTML = waterCount
 }
 
@@ -17,8 +22,17 @@ function existing(){
 //jquery
 
 $(document).ready(function () {
+  //Home page
+$("#locationConstant").click(function(){
+  currentLocation()
+})
+
+
+
+
   $("#purchase-confirm1").hide();
   $("#purchase-confirm2").hide();
+  $("#purchase-notice").hide();
   //shop page
   $("#Seed1").click(function (e) {
     e.preventDefault();
@@ -28,7 +42,8 @@ $(document).ready(function () {
   $("#Deduct5").click(function (e) {
     e.preventDefault();
     deductCoins1()
-
+    $("#purchase-notice").show().fadeOut(4000);
+    $("#purchase-confirm1").hide();
   })
   $("#close1").click(function (e) {
     e.preventDefault();
@@ -68,7 +83,7 @@ $(document).ready(function () {
     $("#add-coin-msg").show().fadeOut(4000);
   })
 
-//Settings page
+  //Settings page
 
 
 
@@ -123,75 +138,81 @@ function closeForm() {
 }
 
 
-
-function displayChecklist() {
+function displayExistingChecklist() {
   let checklist = localStorage.getItem("Checklist")
   var checklistArr = checklist.split(',');
-  let i = checklistArr.length - 1
-  let lastItem = checklistArr[checklistArr.length - 1]
-  document.getElementById("list").innerHTML +=
-    ` ${i} ${lastItem } <br>   `
+  document.getElementById("totalItems").innerHTML += checklistArr.length - 1
+  for (var i = 1; i < checklistArr.length; i++) {
+    document.getElementById("list").innerHTML +=` ${i} ${checklistArr[i] } <br>   `
 
-}
+  }
+  }
 
+  function displayChecklist() {
+    let checklist = localStorage.getItem("Checklist")
+    var checklistArr = checklist.split(',');
+    let i = checklistArr.length - 1
+    let lastItem = checklistArr[checklistArr.length - 1]
+    document.getElementById("totalItems").innerHTML = checklistArr.length - 1
+    document.getElementById("list").innerHTML +=
+      ` ${i} ${lastItem } <br>   `
 
-
-function addition() {
-
-  let points = localStorage.getItem("Points")
-
-  if (isNaN(points)) {
-    let points = 0
-    localStorage.setItem("Points", points);
-    let oldpoints = localStorage.getItem("Points")
-    let oldPoints = parseInt(oldpoints)
-    let newPoints = oldPoints + parseInt("5")
-    localStorage.setItem("Points", newPoints);
-    document.getElementById("points").innerHTML += newPoints
-
-  } else {
-
-    localStorage.setItem("Points", points);
-    let oldpoints = localStorage.getItem("Points")
-    let oldPoints = parseInt(oldpoints)
-    let newPoints = oldPoints + parseInt("5")
-    localStorage.setItem("Points", newPoints);
-    document.getElementById("points").innerHTML = newPoints
   }
 
 
-}
+
+  function addition() {
+
+    let points = localStorage.getItem("Points")
+
+    if (isNaN(points)) {
+      let points = 0
+      localStorage.setItem("Points", points);
+      let oldpoints = localStorage.getItem("Points")
+      let oldPoints = parseInt(oldpoints)
+      let newPoints = oldPoints + parseInt("5")
+      localStorage.setItem("Points", newPoints);
+      document.getElementById("points").innerHTML += newPoints
+
+    } else {
+
+      localStorage.setItem("Points", points);
+      let oldpoints = localStorage.getItem("Points")
+      let oldPoints = parseInt(oldpoints)
+      let newPoints = oldPoints + parseInt("5")
+      localStorage.setItem("Points", newPoints);
+      document.getElementById("points").innerHTML = newPoints
+    }
 
 
-//Settings page
-// record the user's house door location
-function recordPosition() {
-  const successCallback = (position) => {
-    console.log(position);
-  };
-  const errorCallback = (error) => {
-    console.error(error);
-  };
-
-  const watchId1 = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
-    enableHighAccuracy: true,
-    timeout: 7000
-  });
-
-}
+  }
 
 
-// record the user's current location
-function currentLocation() {
-  const successCallback = (position) => {
-    console.log(position);
-  };
-  const errorCallback = (error) => {
-    console.error(error);
-  };
-  const watchId2 = navigator.geolocation.watchPosition(successCallback, errorCallback);
-}
+  //Settings page
+  // record the user's house door location
+  function recordPosition() {
+    const successCallback = (position) => {
+      console.log(position);
+    };
+    const errorCallback = (error) => {
+      console.error(error);
+    };
+
+    const watchId1 = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
+      enableHighAccuracy: true,
+      timeout: 7000
+    });
+
+  }
 
 
-
-
+  // record the user's current location
+  function currentLocation() {
+    const successCallback = (position) => {
+      console.log(position);
+    };
+    const errorCallback = (error) => {
+      console.error(error);
+    };
+    const watchId2 = navigator.geolocation.watchPosition(successCallback, errorCallback);
+  }

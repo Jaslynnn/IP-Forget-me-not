@@ -235,9 +235,11 @@ html {
   .content {
     padding: 6%;
   }
-
+.currentLocation{
+  margin-top: 4%;
+}
   .middle {
-    margin-top: 10%;
+    margin-top: 5%;
     padding: 2%;
   }
 
@@ -451,6 +453,12 @@ html {
 
   }
 
+#totalItems{
+  display: flex;
+  width: 10px;
+  float: left;
+  margin-right: 5%;
+}
   #list {
     text-align: left;
     padding: 5%;
