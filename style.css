@@ -31,7 +31,7 @@ html {
     background-color: #63BCCC;
     text-decoration: none;
     font-family: 'Jost', sans-serif;
-    
+
   }
 
   /* The switch - the box around the slider */
@@ -233,13 +233,14 @@ html {
 
 
   .content {
-    padding: 8%;
+    padding: 6%;
   }
-  
-  .middle{
-margin-top: 10%;
-padding: 2%;
-}
+
+  .middle {
+    margin-top: 10%;
+    padding: 2%;
+  }
+
   .assets {
     float: left;
     width: 19%;
@@ -251,10 +252,12 @@ padding: 2%;
     background-color: white;
     height: 240px;
   }
+
   .firstPage {
-padding-left: 35px;
+    padding-left: 35px;
     margin-left: 20%;
   }
+
   .homePlant {
     width: 100%;
     height: 277px;
@@ -263,19 +266,22 @@ padding-left: 35px;
     justify-content: center;
 
   }
-.checklistSmall{
-  margin-top: 5%;
-  padding:5% ;
-  background-color: white;
-  border-radius: 25px;
-  height:100px;
-  text-decoration: none;
-  display: block;
-  color: #212B57;
-}
-.arrow{
-  text-align: right;
-}
+
+  .checklistSmall {
+    margin-top: 5%;
+    padding: 5%;
+    background-color: white;
+    border-radius: 25px;
+    height: 100px;
+    text-decoration: none;
+    display: block;
+    color: #212B57;
+  }
+
+  .arrow {
+    text-align: right;
+  }
+
   .care {
     background-color: white;
     border-radius: 200px;
@@ -321,8 +327,45 @@ padding-left: 35px;
   }
 
   /*MarketPlace page*/
+  #waterCount{
+    float: left;
+    margin-right:1%;
+    margin-left: 1%;
+  }
+  #plantsCount{
+    float: left;
+    margin-right:1%;
+    margin-left: 1%;
+  }
+  .noOfPlants {
+    text-align:left;
+    margin-top: -3%;
+    padding-bottom: 2%;
+    margin-left: 6%;
+  }
+  .purchase-confirmation {
+    margin-top: 10%;
+    text-align: center;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    z-index: 15;
+    background-color: #CDB4D4;
+  }
   .collection {
-    padding-left: 5%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .nav-item {
+    margin: 12px;
+  }
+
+  .nav-link.active {
+    text-align: center;
+    height: 40px;
+    width: fit-content;
   }
 
 
@@ -339,32 +382,36 @@ padding-left: 35px;
     background-color: white;
     border-radius: 12px;
     text-align: center;
- margin-left: 3%;
+    margin-left: 3%;
     width: 50px;
     float: left;
     margin-right: 10%;
 
   }
 
-  
+
   .inventory2 {
     display: flex;
-justify-content: center;
-align-items: center;
+    justify-content: center;
+    align-items: center;
     border-radius: 12px;
     background-color: white;
     width: 70%;
     height: 50px;
   }
 
+
+.tab-content{
+  width: 100%;
+  align-items: center;
+}
   .window {
     display: flex;
     flex-direction: column;
     background-color: white;
+    width: 44%;
     margin: 3%;
-    padding: 5%;
-    width: 35%;
-    height: 150px;
+    height: 220px;
     border-radius: 25px;
     float: left;
   }
@@ -393,17 +440,19 @@ align-items: center;
     background-color: #FFBD89;
 
   }
-.alert{
-  padding-bottom: 0;
-}
+
+  .alert {
+    padding-bottom: 0;
+  }
+
   .checklist {
- text-align: center;
+    text-align: center;
 
 
   }
 
   #list {
-  text-align: left;
+    text-align: left;
     padding: 5%;
     border-radius: 25px;
     background-color: white;
@@ -504,13 +553,13 @@ align-items: center;
     opacity: 1;
   }
 
-/* Settings page */
+  /* Settings page */
 
-.home{
-  width: 25%;
-  margin-left: 5%;
+  .home {
+    width: 25%;
+    margin-left: 5%;
 
-}
+  }
 
 
 }
