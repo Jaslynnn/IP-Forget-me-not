@@ -20,8 +20,8 @@
 
 $(document).ready(function () {
   //Home page
+  notification()
 
-  currentLocation()
 //
   $("#purchase-confirm1").hide();
   $("#purchase-confirm2").hide();
@@ -162,31 +162,6 @@ $(document).ready(function () {
   
 
 
-
-
-
-
-
-
-
-
-
-  /*$("#addItem").click(function (e) {
-    e.preventDefault();
-    let items = localStorage.getItem("Checklist")
-    let checklist = [items];
-    checklist.forEach(retreival);
-
-    function retreival() {
-      let Item = document.getElementById("addingItem").value
-      checklist.push(Item);
-      localStorage.setItem("Checklist", checklist);
-    }
-    displayChecklist()
-    $("#add-update-msg").show().fadeOut(4000);
-  })
-*/
-
   /* function to add points*/
   $("#addPoints").click(function (e) {
     e.preventDefault();
@@ -195,7 +170,9 @@ $(document).ready(function () {
   })
 
   //Settings page
-
+$("#homeLocator").click(function(e){
+  recordPosition()
+})
 
 
 
@@ -225,29 +202,6 @@ function closeForm() {
 }
 
 
-/*function displayExistingChecklist() {
-  let checklist = localStorage.getItem("Checklist")
-  var checklistArr = checklist.split(',');
-  document.getElementById("totalItems").innerHTML += checklistArr.length - 1
-  for (var i = 1; i < checklistArr.length; i++) {
-    document.getElementById("list").innerHTML +=` ${i} ${checklistArr[i] } <br>   `
-
-  }
-  }
-
-  function displayChecklist() {
-    let checklist = localStorage.getItem("Checklist")
-    var checklistArr = checklist.split(',');
-    let i = checklistArr.length - 1
-    let lastItem = checklistArr[checklistArr.length - 1]
-    document.getElementById("totalItems").innerHTML = checklistArr.length - 1
-    document.getElementById("list").innerHTML +=
-      ` ${i} ${lastItem } <br>   `
-
-  }
-
-
-
   function addition() {
 
     let points = localStorage.getItem("Points")
@@ -273,10 +227,57 @@ function closeForm() {
 
 
   }
-*/
+
 
   //Settings page
-  // record the user's house door location
+//Beginning will run the record current position
+//when pressed the home button the record position activates
+  //big function has-
+  //Record position inactive function
+  //current position inactive function
+  //If comparison if Record == current, show alert
+
+  var id, target, options;
+
+  function success(pos) {
+    var crd = pos.coords;
+  
+    if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
+      console.log('Congratulations, you reached the target');
+      navigator.geolocation.clearWatch(id);
+    }
+  }
+  
+  function error(err) {
+    console.warn('ERROR(' + err.code + '): ' + err.message);
+  }
+  
+  target = {
+    latitude : 0,
+    longitude: 0
+  };
+  
+  options = {
+    enableHighAccuracy: false,
+    timeout: 5000,
+    maximumAge: 0
+  };
+  
+  id = navigator.geolocation.watchPosition(success, error, options);
+
+function notification(){
+
+  var home = recordPosition()
+  var current =  currentLocation()
+  
+  currentLocation()
+  if(home==current){
+    alert("would you like to proceed the the checklist page?")
+
+  }else{
+    console.log( "nothing")
+  }
+
   function recordPosition() {
     const successCallback = (position) => {
       console.log(position);
@@ -290,10 +291,10 @@ function closeForm() {
       timeout: 7000
     });
 
+    return watchId1
+
   }
 
-
-  // record the user's current location
   function currentLocation() {
     const successCallback = (position) => {
       console.log(position);
@@ -301,5 +302,22 @@ function closeForm() {
     const errorCallback = (error) => {
       console.error(error);
     };
-    const watchId2 = navigator.geolocation.watchPosition(successCallback, errorCallback);
+
+    const watchId2 = navigator.geolocation.watchPosition(successCallback, errorCallback, {
+      enableHighAccuracy: true,
+      timeout: 7000
+    });
+    return watchId2
+
+}
+  // record the user's house door location
+
+
+  // record the user's current location
+
+  
+
+ 
   }
+  
+
