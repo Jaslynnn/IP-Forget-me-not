@@ -1,13 +1,10 @@
 //Id consultation
-//How to make the toggle stay in the same state and 
-//the location to be constantly recorded when surfing the whole application 
-
 
 //Display the existing data 
-let points = localStorage.getItem("Points")
-document.getElementById("points").innerHTML = points
+//let points = localStorage.getItem("Points")
+//document.getElementById("points").innerHTML = points
 //function to display all statistics like water, plants and coins
-function existing() {
+/*function existing() {
   waterCount = localStorage.getItem("Water")
   document.getElementById("waterCount").innerHTML = waterCount
   waterCount = localStorage.getItem("Points")
@@ -15,7 +12,7 @@ function existing() {
   waterCount = localStorage.getItem("Plants")
   document.getElementById("plantsCount").innerHTML = waterCount
 }
-
+*/
 
 
 
@@ -23,13 +20,9 @@ function existing() {
 
 $(document).ready(function () {
   //Home page
-$("#locationConstant").click(function(){
+
   currentLocation()
-})
-
-
-
-
+//
   $("#purchase-confirm1").hide();
   $("#purchase-confirm2").hide();
   $("#purchase-notice").hide();
@@ -55,12 +48,130 @@ $("#locationConstant").click(function(){
 
   //Checklist page
   /* using arrays to create checklist*/
+ 
+
+
+  const APIKEY = "60150aff6adfba69db8b6b87";
+  loadList()
   $("#myForm").hide();
   $("#add-update-msg").hide();
   $("#add-coin-msg").hide();
+  
+  $("#addItem").on("click", function (e) {
+    //prevent default action of the button 
+    e.preventDefault();
+
+    let item = $("#addingItem").val()
 
 
-  $("#addItem").click(function (e) {
+    let jsondata = {
+      "checklist": item,
+      
+    };
+
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://forgetmenot-7aac.restdb.io/rest/checklist",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      },
+
+
+      "processData": false,
+      "data": JSON.stringify(jsondata),
+      "beforeSend": function(){
+        //@TODO use loading bar instead
+        //disable our button or show loading bar
+        $("#addItem").prop( "disabled", true);
+
+      }
+    }
+
+    $.ajax(settings).done(function (response) {
+      console.log(response);
+      
+      $("#addItem").prop( "disabled", false);
+      
+      //@TODO update frontend UI 
+      $("#add-update-msg").show().fadeOut(3000);
+      //update our list
+      updateList();
+    });
+  });
+
+//load list upon log in
+  function loadList(limit = 30, all = true) {
+  
+    //[STEP 7]: Create our AJAX settings
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://forgetmenot-7aac.restdb.io/rest/checklist",
+      "method": "GET", 
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      },
+    }
+
+    $.ajax(settings).done(function (response) {
+
+      for (var i = 0; i < response.length && i < limit; i++) {
+  document.getElementById("list").innerHTML += `${[i+1]}.${response[i].checklist}<br>`
+
+
+      $("#totalItems").html(response.length);
+      }
+    });
+  }
+
+    function updateList(limit = 30, all = true) {
+  
+      //[STEP 7]: Create our AJAX settings
+      let settings = {
+        "async": true,
+        "crossDomain": true,
+        "url": "https://forgetmenot-7aac.restdb.io/rest/checklist",
+        "method": "GET", 
+        "headers": {
+          "content-type": "application/json",
+          "x-apikey": APIKEY,
+          "cache-control": "no-cache"
+        },
+      }
+
+      $.ajax(settings).done(function (response) {
+        let i = response.length
+        let lastItem = response[response.length- 1].checklist
+       
+    document.getElementById("list").innerHTML += ` ${i} ${lastItem } <br>   `
+
+  
+        $("#totalItems").html(response.length);
+        
+      });
+    }
+  
+    
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  /*$("#addItem").click(function (e) {
     e.preventDefault();
     let items = localStorage.getItem("Checklist")
     let checklist = [items];
@@ -74,7 +185,7 @@ $("#locationConstant").click(function(){
     displayChecklist()
     $("#add-update-msg").show().fadeOut(4000);
   })
-
+*/
 
   /* function to add points*/
   $("#addPoints").click(function (e) {
@@ -102,30 +213,6 @@ function deductCoins1() {
   document.getElementById("points").innerHTML = finalPoints
 }
 
-//Buying of second seed
-function deductCoins2() {
-  let coins = localStorage.getItem("Points")
-  let finalPoints = parseInt(coins) - parseInt('10')
-  localStorage.setItem("Points", finalPoints);
-  document.getElementById("points").innerHTML = finalPoints
-}
-//Buying of Third seed
-function deductCoins3() {
-  let coins = localStorage.getItem("Points")
-  let finalPoints = parseInt(coins) - parseInt('20')
-  localStorage.setItem("Points", finalPoints);
-  document.getElementById("points").innerHTML = finalPoints
-}
-
-//buying of water
-//deduct coins and add water
-function deductCoinsForWater() {
-  let coins = localStorage.getItem("Points")
-  let finalPoints = parseInt(coins) - parseInt('10')
-  localStorage.setItem("Points", finalPoints);
-  document.getElementById("points").innerHTML = finalPoints
-}
-
 
 //Checklist Page
 
@@ -138,7 +225,7 @@ function closeForm() {
 }
 
 
-function displayExistingChecklist() {
+/*function displayExistingChecklist() {
   let checklist = localStorage.getItem("Checklist")
   var checklistArr = checklist.split(',');
   document.getElementById("totalItems").innerHTML += checklistArr.length - 1
@@ -186,7 +273,7 @@ function displayExistingChecklist() {
 
 
   }
-
+*/
 
   //Settings page
   // record the user's house door location
