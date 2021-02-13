@@ -14,15 +14,68 @@
 }
 */
 
+//clock and color changing
+class DigitalClock {
+  constructor(element) {
+    this.element = element;
+  }
 
+  start(){
+    this.update();
+    setInterval(() => {
+      this.update();
+
+    }, 500)
+  }
+
+
+  update(){
+
+    const parts = this.getTimeParts();
+    const minuteFormatted = parts.minute.toString().padStart(2,"0");
+    const timeFormatted = `${parts.hour}: ${minuteFormatted}`;
+    const amPm = parts.isAm ? "AM":"PM";
+    const amPmColorChange = parts.isAm ? "pink":"red";
+    const greeting = parts.morning ? "Good Morning":"Good afternoon";
+document.querySelector("body").style.backgroundColor = amPmColorChange;
+    this.element.querySelector(".clock-Time").textContent = timeFormatted;
+    this.element.querySelector(".clock-ampm").textContent = amPm;
+    this.element.querySelector(".greeting").textContent = greeting;
+  }
+
+  getTimeParts(){
+    const now = new Date();
+
+    return {
+    
+      hour: now.getHours() % 12 || 12,
+      minute: now.getMinutes(),
+      isAm: now.getHours() < 12,
+      morning : now.getHours() < 12,
+      evening : now.getHours() < 12
+    };
+  }
+
+
+
+}
+
+const clockElement = document.querySelector(".clock")
+const clockObject = new DigitalClock(clockElement);
+
+clockObject.start()
+
+//end of clock
 
 //jquery
 
 $(document).ready(function () {
   //Home page
+
+
   notification()
 
-//
+  //
   $("#purchase-confirm1").hide();
   $("#purchase-confirm2").hide();
   $("#purchase-notice").hide();
@@ -48,7 +101,7 @@ $(document).ready(function () {
 
   //Checklist page
   /* using arrays to create checklist*/
- 
+
 
 
   const APIKEY = "60150aff6adfba69db8b6b87";
@@ -56,7 +109,7 @@ $(document).ready(function () {
   $("#myForm").hide();
   $("#add-update-msg").hide();
   $("#add-coin-msg").hide();
-  
+
   $("#addItem").on("click", function (e) {
     //prevent default action of the button 
     e.preventDefault();
@@ -66,7 +119,7 @@ $(document).ready(function () {
 
     let jsondata = {
       "checklist": item,
-      
+
     };
 
     let settings = {
@@ -83,19 +136,19 @@ $(document).ready(function () {
 
       "processData": false,
       "data": JSON.stringify(jsondata),
-      "beforeSend": function(){
+      "beforeSend": function () {
         //@TODO use loading bar instead
         //disable our button or show loading bar
-        $("#addItem").prop( "disabled", true);
+        $("#addItem").prop("disabled", true);
 
       }
     }
 
     $.ajax(settings).done(function (response) {
       console.log(response);
-      
-      $("#addItem").prop( "disabled", false);
-      
+
+      $("#addItem").prop("disabled", false);
+
       //@TODO update frontend UI 
       $("#add-update-msg").show().fadeOut(3000);
       //update our list
@@ -103,15 +156,15 @@ $(document).ready(function () {
     });
   });
 
-//load list upon log in
+  //load list upon log in
   function loadList(limit = 30, all = true) {
-  
+
     //[STEP 7]: Create our AJAX settings
     let settings = {
       "async": true,
       "crossDomain": true,
       "url": "https://forgetmenot-7aac.restdb.io/rest/checklist",
-      "method": "GET", 
+      "method": "GET",
       "headers": {
         "content-type": "application/json",
         "x-apikey": APIKEY,
@@ -122,44 +175,44 @@ $(document).ready(function () {
     $.ajax(settings).done(function (response) {
 
       for (var i = 0; i < response.length && i < limit; i++) {
-  document.getElementById("list").innerHTML += `${[i+1]}.${response[i].checklist}<br>`
+        document.getElementById("list").innerHTML += `${[i+1]}.${response[i].checklist}<br>`
 
 
-      $("#totalItems").html(response.length);
+        $("#totalItems").html(response.length);
       }
     });
   }
 
-    function updateList(limit = 30, all = true) {
-  
-      //[STEP 7]: Create our AJAX settings
-      let settings = {
-        "async": true,
-        "crossDomain": true,
-        "url": "https://forgetmenot-7aac.restdb.io/rest/checklist",
-        "method": "GET", 
-        "headers": {
-          "content-type": "application/json",
-          "x-apikey": APIKEY,
-          "cache-control": "no-cache"
-        },
-      }
+  function updateList(limit = 30, all = true) {
 
-      $.ajax(settings).done(function (response) {
-        let i = response.length
-        let lastItem = response[response.length- 1].checklist
-       
-    document.getElementById("list").innerHTML += ` ${i} ${lastItem } <br>   `
-
-  
-        $("#totalItems").html(response.length);
-        
-      });
+    //[STEP 7]: Create our AJAX settings
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://forgetmenot-7aac.restdb.io/rest/checklist",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      },
     }
-  
-    
 
-  
+    $.ajax(settings).done(function (response) {
+      let i = response.length
+      let lastItem = response[response.length - 1].checklist
+
+      document.getElementById("list").innerHTML += ` ${i} ${lastItem } <br>   `
+
+
+      $("#totalItems").html(response.length);
+
+    });
+  }
+
+
+
+
 
 
   /* function to add points*/
@@ -170,9 +223,9 @@ $(document).ready(function () {
   })
 
   //Settings page
-$("#homeLocator").click(function(e){
-  recordPosition()
-})
+  $("#homeLocator").click(function (e) {
+    recordPosition()
+  })
 
 
 
@@ -202,80 +255,80 @@ function closeForm() {
 }
 
 
-  function addition() {
+function addition() {
 
-    let points = localStorage.getItem("Points")
+  let points = localStorage.getItem("Points")
 
-    if (isNaN(points)) {
-      let points = 0
-      localStorage.setItem("Points", points);
-      let oldpoints = localStorage.getItem("Points")
-      let oldPoints = parseInt(oldpoints)
-      let newPoints = oldPoints + parseInt("5")
-      localStorage.setItem("Points", newPoints);
-      document.getElementById("points").innerHTML += newPoints
+  if (isNaN(points)) {
+    let points = 0
+    localStorage.setItem("Points", points);
+    let oldpoints = localStorage.getItem("Points")
+    let oldPoints = parseInt(oldpoints)
+    let newPoints = oldPoints + parseInt("5")
+    localStorage.setItem("Points", newPoints);
+    document.getElementById("points").innerHTML += newPoints
 
-    } else {
+  } else {
 
-      localStorage.setItem("Points", points);
-      let oldpoints = localStorage.getItem("Points")
-      let oldPoints = parseInt(oldpoints)
-      let newPoints = oldPoints + parseInt("5")
-      localStorage.setItem("Points", newPoints);
-      document.getElementById("points").innerHTML = newPoints
-    }
-
-
+    localStorage.setItem("Points", points);
+    let oldpoints = localStorage.getItem("Points")
+    let oldPoints = parseInt(oldpoints)
+    let newPoints = oldPoints + parseInt("5")
+    localStorage.setItem("Points", newPoints);
+    document.getElementById("points").innerHTML = newPoints
   }
 
 
-  //Settings page
+}
+
+
+//Settings page
 //Beginning will run the record current position
 //when pressed the home button the record position activates
-  //big function has-
-  //Record position inactive function
-  //current position inactive function
-  //If comparison if Record == current, show alert
+//big function has-
+//Record position inactive function
+//current position inactive function
+//If comparison if Record == current, show alert
 
-  var id, target, options;
+var id, target, options;
 
-  function success(pos) {
-    var crd = pos.coords;
-  
-    if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
-      console.log('Congratulations, you reached the target');
-      navigator.geolocation.clearWatch(id);
-    }
+function success(pos) {
+  var crd = pos.coords;
+
+  if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
+    console.log('Congratulations, you reached the target');
+    navigator.geolocation.clearWatch(id);
   }
-  
-  function error(err) {
-    console.warn('ERROR(' + err.code + '): ' + err.message);
-  }
-  
-  target = {
-    latitude : 0,
-    longitude: 0
-  };
-  
-  options = {
-    enableHighAccuracy: false,
-    timeout: 5000,
-    maximumAge: 0
-  };
-  
-  id = navigator.geolocation.watchPosition(success, error, options);
+}
 
-function notification(){
+function error(err) {
+  console.warn('ERROR(' + err.code + '): ' + err.message);
+}
+
+target = {
+  latitude: 0,
+  longitude: 0
+};
+
+options = {
+  enableHighAccuracy: false,
+  timeout: 5000,
+  maximumAge: 0
+};
+
+id = navigator.geolocation.watchPosition(success, error, options);
+
+function notification() {
 
   var home = recordPosition()
-  var current =  currentLocation()
-  
+  var current = currentLocation()
+
   currentLocation()
-  if(home==current){
+  if (home == current) {
     alert("would you like to proceed the the checklist page?")
 
-  }else{
-    console.log( "nothing")
+  } else {
+    console.log("nothing")
   }
 
   function recordPosition() {
@@ -309,15 +362,13 @@ function notification(){
     });
     return watchId2
 
-}
+  }
   // record the user's house door location
 
 
   // record the user's current location
 
-  
 
- 
-  }
-  
 
+
+}
