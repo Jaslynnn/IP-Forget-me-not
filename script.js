@@ -20,7 +20,7 @@ class DigitalClock {
     this.element = element;
   }
 
-  start(){
+  start() {
     this.update();
     setInterval(() => {
       this.update();
@@ -29,30 +29,30 @@ class DigitalClock {
   }
 
 
-  update(){
+  update() {
 
     const parts = this.getTimeParts();
-    const minuteFormatted = parts.minute.toString().padStart(2,"0");
+    const minuteFormatted = parts.minute.toString().padStart(2, "0");
     const timeFormatted = `${parts.hour}: ${minuteFormatted}`;
-    const amPm = parts.isAm ? "AM":"PM";
-    const amPmColorChange = parts.isAm ? "pink":"red";
-    const greeting = parts.morning ? "Good Morning":"Good afternoon";
-document.querySelector("body").style.backgroundColor = amPmColorChange;
+    const amPm = parts.isAm ? "AM" : "PM";
+    const amPmColorChange = parts.isAm ? "pink" : "red";
+    const greeting = parts.morning ? "Good Morning" : "Good afternoon";
+    document.querySelector("body").style.backgroundColor = amPmColorChange;
     this.element.querySelector(".clock-Time").textContent = timeFormatted;
     this.element.querySelector(".clock-ampm").textContent = amPm;
     this.element.querySelector(".greeting").textContent = greeting;
   }
 
-  getTimeParts(){
+  getTimeParts() {
     const now = new Date();
 
     return {
-    
+
       hour: now.getHours() % 12 || 12,
       minute: now.getMinutes(),
       isAm: now.getHours() < 12,
-      morning : now.getHours() < 12,
-      evening : now.getHours() < 12
+      morning: now.getHours() < 12,
+      evening: now.getHours() < 12
     };
   }
 

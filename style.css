@@ -34,8 +34,8 @@ html {
 
   }
 
-  .clock-Time{
-margin-right: 2%;
+  .clock-Time {
+    margin-right: 2%;
     float: left;
   }
 
@@ -240,9 +240,11 @@ margin-right: 2%;
   .content {
     padding: 6%;
   }
-.currentLocation{
-  margin-top: 4%;
-}
+
+  .currentLocation {
+    margin-top: 4%;
+  }
+
   .middle {
     margin-top: 5%;
     padding: 2%;
@@ -334,22 +336,25 @@ margin-right: 2%;
   }
 
   /*MarketPlace page*/
-  #waterCount{
+  #waterCount {
     float: left;
-    margin-right:1%;
+    margin-right: 1%;
     margin-left: 1%;
   }
-  #plantsCount{
+
+  #plantsCount {
     float: left;
-    margin-right:1%;
+    margin-right: 1%;
     margin-left: 1%;
   }
+
   .noOfPlants {
-    text-align:left;
+    text-align: left;
     margin-top: -3%;
     padding-bottom: 2%;
     margin-left: 6%;
   }
+
   .purchase-confirmation {
     margin-top: 10%;
     text-align: center;
@@ -358,6 +363,7 @@ margin-right: 2%;
     z-index: 15;
     background-color: #CDB4D4;
   }
+
   .collection {
     display: flex;
     flex-direction: column;
@@ -408,10 +414,11 @@ margin-right: 2%;
   }
 
 
-.tab-content{
-  width: 100%;
-  align-items: center;
-}
+  .tab-content {
+    width: 100%;
+    align-items: center;
+  }
+
   .window {
     display: flex;
     flex-direction: column;
@@ -458,12 +465,13 @@ margin-right: 2%;
 
   }
 
-#totalItems{
-  display: flex;
-  width: 10px;
-  float: left;
-  margin-right: 5%;
-}
+  #totalItems {
+    display: flex;
+    width: 10px;
+    float: left;
+    margin-right: 5%;
+  }
+
   #list {
     text-align: left;
     padding: 5%;
