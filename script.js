@@ -123,7 +123,6 @@ $(document).ready(function () {
 
     };
 
-
     let settings = {
       "async": true,
       "crossDomain": true,
@@ -159,6 +158,7 @@ $(document).ready(function () {
   });
 });
 
+
 function loadCoins(limit = 30, all = true) {
   //load Coins upon log in
  //[STEP 7]: Create our AJAX settings
@@ -180,9 +180,12 @@ function loadCoins(limit = 30, all = true) {
  
  
  });
+
+}
+
+
 function updateCoins(limit = 30, all = true) {
  //load Coins upon log in
-//[STEP 7]: Create our AJAX settings
 let settings = {
   "async": true,
   "crossDomain": true,
@@ -203,6 +206,7 @@ $.ajax(settings).done(function (response) {
 });
 
 }
+
 
 
 
@@ -236,7 +240,7 @@ $.ajax(settings).done(function (response) {
       "processData": false,
       "data": JSON.stringify(jsondata),
       "beforeSend": function () {
-        //@TODO use loading bar instead
+        // use loading bar instead
         //disable our button or show loading bar
         $("#addItem").prop("disabled", true);
 
@@ -248,7 +252,7 @@ $.ajax(settings).done(function (response) {
 
       $("#addItem").prop("disabled", false);
 
-      //@TODO update frontend UI 
+      //update frontend UI 
       $("#add-update-msg").show().fadeOut(3000);
       //update our list
       updateList();
@@ -327,7 +331,6 @@ $.ajax(settings).done(function (response) {
   })
 
 */
-
 })
 
 
