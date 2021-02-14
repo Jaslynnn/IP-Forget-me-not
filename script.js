@@ -35,7 +35,7 @@ class DigitalClock {
     const minuteFormatted = parts.minute.toString().padStart(2, "0");
     const timeFormatted = `${parts.hour}: ${minuteFormatted}`;
     const amPm = parts.isAm ? "AM" : "PM";
-    const amPmColorChange = parts.isAm ? "pink" : "red";
+    const amPmColorChange = parts.isAm ? "pink" : "lightblue";
     const greeting = parts.morning ? "Good Morning" : "Good afternoon";
     document.querySelector("body").style.backgroundColor = amPmColorChange;
     this.element.querySelector(".clock-Time").textContent = timeFormatted;
@@ -106,10 +106,109 @@ $(document).ready(function () {
 
   const APIKEY = "60150aff6adfba69db8b6b87";
   loadList()
+  loadCoins()
   $("#myForm").hide();
   $("#add-update-msg").hide();
   $("#add-coin-msg").hide();
 
+
+  //Add coins
+  $("#addPoints").on("click", function (e){
+    e.preventDefault();
+
+    let coins = 5
+
+    let jsondata = {
+      "coins": coins,
+
+    };
+
+
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
+      "method": "POST",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      },
+
+      "processData": false,
+      "data": JSON.stringify(jsondata),
+      "beforeSend": function () {
+        //@TODO use loading bar instead
+        //disable our button or show loading bar
+        $("#addPoints").prop("disabled", true);
+
+      }
+
+  }
+
+
+  $.ajax(settings).done(function (response) {
+    console.log(response);
+
+    $("#addPoints").prop("disabled", false);
+
+    //@TODO update frontend UI 
+    $("#add-coin-msg").show().fadeOut(3000);
+    //update our list
+    updateCoins();
+  });
+});
+
+function loadCoins(limit = 30, all = true) {
+  //load Coins upon log in
+ //[STEP 7]: Create our AJAX settings
+ let settings = {
+   "async": true,
+   "crossDomain": true,
+   "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
+   "method": "GET",
+   "headers": {
+     "content-type": "application/json",
+     "x-apikey": APIKEY,
+     "cache-control": "no-cache"
+   },
+ }
+ 
+ $.ajax(settings).done(function (response) {
+ 
+     $("#points").html(response.length * 5);
+ 
+ 
+ });
+function updateCoins(limit = 30, all = true) {
+ //load Coins upon log in
+//[STEP 7]: Create our AJAX settings
+let settings = {
+  "async": true,
+  "crossDomain": true,
+  "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
+  "method": "GET",
+  "headers": {
+    "content-type": "application/json",
+    "x-apikey": APIKEY,
+    "cache-control": "no-cache"
+  },
+}
+
+$.ajax(settings).done(function (response) {
+
+    $("#points").html(response.length * 5);
+
+
+});
+
+}
+
+
+
+
+
+//AddItem
   $("#addItem").on("click", function (e) {
     //prevent default action of the button 
     e.preventDefault();
@@ -216,7 +315,7 @@ $(document).ready(function () {
 
 
   /* function to add points*/
-  $("#addPoints").click(function (e) {
+  /*$("#addPoints").click(function (e) {
     e.preventDefault();
     addition()
     $("#add-coin-msg").show().fadeOut(4000);
@@ -227,7 +326,7 @@ $(document).ready(function () {
     recordPosition()
   })
 
-
+*/
 
 })
 
@@ -255,7 +354,7 @@ function closeForm() {
 }
 
 
-function addition() {
+/*function addition() {
 
   let points = localStorage.getItem("Points")
 
@@ -281,7 +380,7 @@ function addition() {
 
 }
 
-
+*/
 //Settings page
 //Beginning will run the record current position
 //when pressed the home button the record position activates
