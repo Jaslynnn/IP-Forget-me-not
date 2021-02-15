@@ -16,67 +16,72 @@
 </head>
 
 <body onload="loadList()">
-<div class="content">
-  <div class="time" id = none >
+  <div class="content">
+    <div class="time" id=none>
 
-    <div class="clock">
+      <div class="clock">
         <h1 class=greeting></h1>
         <div class="clock-Time"></div>
         <div class="clock-ampm"></div>
 
-    </div>
-
-</div>
-  <div class="coins2">
-      <div id=points>0</div>
-      <div class=icon>coins</div>
-  </div>
-  <div class="inventory2">
-      <p><div id="waterCount">0</div>
-      water
-
-          <div id="plantsCount">0</div>
-          plants</p>
-
-  </div>
-<div class="checklist">
-
-    <div id="add-update-msg">
-      <div class="alert " role="alert">
-        Item successfully added to checklist
-      </div>  
-    </div>
- <div id="add-coin-msg">
-      <div class="alert " role="alert">
-        Congratulations! You have gained 5 coins!
       </div>
 
+    </div>
+    <div class="coins2">
+      <div id=points>0</div>
+      <div class=icon>coins</div>
+    </div>
+    <div class="inventory2">
+      <p>
+        <div id="waterCount">0</div>
+        water
+
+        <div id="plantsCount">0</div>
+        plants
+      </p>
 
     </div>
- <div id="list"> 
-   <h5><div id="totalItems"></div> items in your checklist <br></h5></div>
+    <div class="checklist">
 
-</div>
-  
+      <div id="add-update-msg">
+        <div class="alert " role="alert">
+          Item successfully added to checklist
+        </div>
+      </div>
+      <div id="add-coin-msg">
+        <div class="alert " role="alert">
+          Congratulations! You have gained 5 coins!
+        </div>
+
+
+      </div>
+      <div id="list">
+        <h5>
+          <div id="totalItems"></div> items in your checklist <br>
+        </h5>
+      </div>
+
     </div>
-    
-    <button class="open-button" onclick="openForm()">
-      <h1>+</h1>
-    </button>
 
-    <div class="chat-popup" id="myForm">
-      <form class="form-container">
-        <h4>Add Item <button type="button" class="btn cancel" onclick="closeForm()">
-            <h2>x</h2>
-          </button></h4>
+  </div>
 
-        <input type="text" class="form-control" id=addingItem aria-label="Text input with checkbox">
+  <button class="open-button" onclick="openForm()">
+    <h1>+</h1>
+  </button>
 
-        <button type="submit" class="btn" id=addItem>
-          <h2>+</h2>
-        </button>
-      </form>
-    </div>
+  <div class="chat-popup" id="myForm">
+    <form class="form-container">
+      <h4>Add Item <button type="button" class="btn cancel" onclick="closeForm()">
+          <h2>x</h2>
+        </button></h4>
+
+      <input type="text" class="form-control" id=addingItem aria-label="Text input with checkbox">
+
+      <button type="submit" class="btn" id=addItem>
+        <h2>+</h2>
+      </button>
+    </form>
+  </div>
   </div>
   <div class="position">
     <button type="button" id=addPoints class="btn care">Yes I have brought everything.</button>
@@ -92,7 +97,7 @@
 
   </div>
 
-</div>
+  </div>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW" crossorigin="anonymous">
   </script>

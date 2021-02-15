@@ -105,6 +105,60 @@ $(document).ready(function () {
 
 
   const APIKEY = "60150aff6adfba69db8b6b87";
+//Sign up page
+$("#signUp").on("click", function(e){
+
+  const username = $("#Username").val()
+  let email = $("#Email").val()
+  let password = $("#Password").val()
+
+  let jsondata = {
+    "username": username,
+    "email" : email,
+    "password" : password,
+
+  };
+  let settings = {
+    "async": true,
+    "crossDomain": true,
+    "url": "https://forgetmenot-7aac.restdb.io/rest/accounts",
+    "method": "POST",
+    "headers": {
+      "content-type": "application/json",
+      "x-apikey": APIKEY,
+      "cache-control": "no-cache"
+    },
+
+    "processData": false,
+    "data": JSON.stringify(jsondata),
+    "beforeSend": function () {
+      //@TODO use loading bar instead
+      //disable our button or show loading bar
+      $("#signUp").prop("disabled", true);
+
+    }
+
+}
+
+
+$.ajax(settings).done(function (response) {
+  console.log(response);
+
+  $("#signUp").prop("disabled", false);
+
+  //@TODO update frontend UI 
+  alert("You have successfully signed up")
+  $("#add-coin-msg").show().fadeOut(3000);
+  //update our list
+ 
+});
+
+});
+
+
+
+
+
   loadList()
   loadCoins()
   $("#myForm").hide();
@@ -119,6 +173,7 @@ $(document).ready(function () {
     let coins = 5
 
     let jsondata = {
+      "username": username,
       "coins": coins,
 
     };

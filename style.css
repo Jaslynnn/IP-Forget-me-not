@@ -246,7 +246,34 @@ html {
     width: 100%;
 
   }
+/*Tutorial page*/
+.skip{
+text-align: end;
+}
 
+.allInstructions{
+  margin-top: 20%;
+  padding: 6%;
+  font-size: 18px;
+ 
+}
+
+.mainInstructions{
+  margin-top: 20%;
+ 
+}
+
+.next{
+  position: fixed;
+  bottom:0;
+  right: 0;
+  text-align: center;
+margin: 6%;
+background-color: white;
+width: 10%;
+height: 4%;
+border-radius: 10px;
+}
   /*home page*/
 
 
