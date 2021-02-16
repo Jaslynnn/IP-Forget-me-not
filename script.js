@@ -22,7 +22,7 @@ class DigitalClock {
     const minuteFormatted = parts.minute.toString().padStart(2, "0");
     const timeFormatted = `${parts.hour}: ${minuteFormatted}`;
     const amPm = parts.isAm ? "AM" : "PM";
-    const amPmColorChange = parts.isAm ? "pink" : "lightblue";
+    const amPmColorChange = parts.isAm ? "#D17173" : "#8E8971";
     const greeting = parts.morning ? "Good Morning" : "Good afternoon";
     document.querySelector("body").style.backgroundColor = amPmColorChange;
     this.element.querySelector(".clock-Time").textContent = timeFormatted;
@@ -58,7 +58,7 @@ clockObject.start()
 
 $(document).ready(function () {
   //Home page
- const APIKEY = "60150aff6adfba69db8b6b87";
+  const APIKEY = "60150aff6adfba69db8b6b87";
 
   notification()
 
@@ -178,7 +178,7 @@ $(document).ready(function () {
 
     });
   });
- 
+
   function loadSeeds(limit = 30, all = true) {
     let settings = {
       "async": true,
@@ -193,7 +193,8 @@ $(document).ready(function () {
     }
 
     $.ajax(settings).done(function (response) {
-
+        $("#plantsCount").html(response.length);
+        $("#plantsCount2").html(response.length);
       for (var i = 0; i < response.length && i < limit; i++) {
         document.getElementById("pills-home").innerHTML += `                    
         <div class="window">
@@ -203,16 +204,15 @@ $(document).ready(function () {
         <button type="submit" class="btn btn-secondary" id= story${i} >Backstory</button>
         </div>`
 
-        $("#plantsCount").html(response.length);
-    $("#plantsCount2").html(response.length);
+
       }
-      
+
 
     });
 
 
   }
-  
+
   /*$("#Deduct5").click(function (e) {
     e.preventDefault();
     deductCoins1()
@@ -227,7 +227,7 @@ $(document).ready(function () {
 
 
 
- 
+
   //Sign up page
   $("#signUp").on("click", function (e) {
 

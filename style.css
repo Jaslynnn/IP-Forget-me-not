@@ -156,7 +156,7 @@ html {
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    z-index: -20;
+    z-index: -10;
     width: 90%;
     height: 50px;
     border-radius: 200px;
@@ -304,14 +304,19 @@ border-radius: 10px;
   }
 
   .firstPage {
+    display: flex;  
+    flex-direction: column;
+    align-items: center;
   margin-top: 5%;
+  
  
   }
 
   .homePlant {
     display: flex;   
-
-  
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
     height: 277px;
     background-color: white;
     border-radius: 15px;
@@ -410,13 +415,17 @@ border-radius: 10px;
   }
 
   .nav-item {
-    margin: 12px;
+    margin: 12px;   
+    color: black;
+
   }
 
   .nav-link.active {
     text-align: center;
     height: 40px;
     width: fit-content;
+    color:white;
+
   }
 
 
