@@ -39,6 +39,7 @@ html {
     font-family: 'Jost', sans-serif;
   }
 /*Animation Styling*/
+/*Index page*/
 .intro{
   background-color:black;
   position: fixed;
@@ -51,7 +52,7 @@ html {
   justify-content: center;
   align-items: center;
 }
-.slider{
+.slider1{
   background-color:#555;
   position: fixed;
   top: 0;
@@ -80,6 +81,40 @@ html {
   display: inline-block;
 
 }
+
+/*tutorial page*/
+.hide2{
+  background-color:none;
+  overflow: hidden;
+}
+
+.hide2 span{
+  transform: translateY(100%);
+  display: inline-block;
+
+}
+
+
+/*Home page*/
+
+.slider2{
+  background-color:white;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+}
+
+
+
+
+
 
 .greeting{
   color: white;
@@ -202,7 +237,7 @@ html {
     position: fixed;
     bottom: 0;
     width: 90%;
-    z-index: 1;
+    z-index: 20;
 
   }
 
@@ -211,7 +246,7 @@ html {
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    z-index: -10;
+    z-index: 10;
     width: 90%;
     height: 50px;
     border-radius: 200px;
@@ -249,7 +284,7 @@ html {
 
     border-color: #63BCCC;
     position: relative;
-    z-index: 10;
+    z-index: 1;
     color: black;
     padding: 10px 16px;
     padding-bottom: 13%;
@@ -264,6 +299,17 @@ html {
     color: white;
     margin-top: 60%;
     text-decoration: none;
+
+  }
+
+  .begin {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin-top: 20%;
+    text-decoration: none;
+    font-size: 25px;
 
   }
 
@@ -287,6 +333,7 @@ html {
     color: #212B57;
     text-decoration: none;
     font-family: 'Roboto', sans-serif;
+    transform: translateY(100%);
 
   }
 
@@ -304,19 +351,21 @@ html {
 /*Tutorial page*/
 .skip{
 text-align: end;
+color: white;
 }
 
 .allInstructions{
   margin-top: 15%;
   padding: 8%;
   font-size: 18px;
+  color: white;
  
 }
 
 .mainInstructions{
   margin-top: 15%;
   padding: 3%;
-  line-height: 1.75;
+  line-height: 2;
 }
 
 .next{
@@ -329,6 +378,7 @@ background-color: white;
 width: 10%;
 height: 4%;
 border-radius: 10px;
+border: none;
 }
   /*home page*/
 

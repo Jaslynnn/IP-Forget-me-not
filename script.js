@@ -1,14 +1,193 @@
 //Id consultation
-//intro animation
+//All animation
+if (window.location.pathname == "/index.html") {
+  FirstAnimation()
+}
+if (window.location.pathname == "/LogIn.html") {
+  LogInAnimation()
+}
 
-function FirstAnimation(){
-const tl =gsap.timeline({defaults: {ease:"power1.out"}})
-tl.to('.text',{y:"0%", duration: 1, stagger: 0.26});
-tl.to(".slider",{y:"-100%", duration: 1.5, delay : 0.4});
-tl.to(".intro",{y: "-100%", duration : 1}, "-=.5");
-tl.fromTo(".name",{opacity:0},{opacity:1 , duration: 2},"-=.5" )}
+if (window.location.pathname == "/SignUp.html") {
+  SignUpAnimation()
+}
 
+if (window.location.pathname == "/tutorial.html") {
+  TutorialAnimation()
+}
+
+if (window.location.pathname == "/home.html") {
+  HomeAnimation()
+}
+if (window.location.pathname == "/Marketplace.html") {
+  MarketplaceAnimation()
+}
+if (window.location.pathname == "/checklist.html") {
+  ChecklistAnimation()
+}
+if (window.location.pathname == "/Settings.html") {
+  SettingsAnimation()
+}
+function FirstAnimation() {
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power1.out"
+    }
+  })
+  tl.to('.text', {
+    y: "0%",
+    duration: 1.5,
+    stagger: 0.25
+  });
+  tl.to(".slider1", {
+    y: "-100%",
+    duration: 1.5,
+    delay: 0.5
+  });
+  tl.to(".intro", {
+    y: "-100%",
+    duration: 1
+  }, "-=1");
+  tl.fromTo(".name", {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 2
+  }, "-=.5")
+
+  tl.fromTo(".begin", {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 2
+  }, "-=1")
+}
+
+function LogInAnimation() {
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power1.out"
+    }
+  })
+  tl.to('.logIn', {
+    y: "13%",
+    duration: 1
+  });
+
+}
+
+function SignUpAnimation() {
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power1.out"
+    }
+  })
+  tl.to('.logIn', {
+    y: "1%",
+    duration: 1
+  });
+
+}
+
+function TutorialAnimation() {
+
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power1.out"
+    }
+  })
+
+  tl.fromTo(".heading", {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 2
+  })
+
+  tl.to('.text', {
+    y: "0%",
+    duration: 2,
+    stagger: 0.7
+  },"-=2");
+
+  tl.fromTo(".skip", {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 2
+  },"-=4.5")
+
+  tl.fromTo(".next", {
+    opacity: 0
+  }, {
+    opacity: 1,
+    duration: 2
+  },"-=1")
+
+
+}
+//home page animation
+function HomeAnimation() {
+
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power1.out"
+    }
+  })
+
+  tl.to(".slider2", {
+    x: "-100%",
+    duration: 1.2,
+    delay: .9
+  });
+
+}
+function MarketplaceAnimation() {
+
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power1.out"
+    }
+  })
+
+  tl.to(".slider2", {
+    x: "-100%",
+    duration: 2,
+    delay: 1
+  });
+
+}
+function ChecklistAnimation() {
+
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power1.out"
+    }
+  })
+
+  tl.to(".slider2", {
+    x: "-100%",
+    duration: 2,
+    delay: 1.5
+  });
+
+}
+function SettingsAnimation() {
+
+  const tl = gsap.timeline({
+    defaults: {
+      ease: "power1.out"
+    }
+  })
+
+  tl.to(".slider2", {
+    x: "-100%",
+    duration: .5,
+    delay: 0
+  });
+
+}
 //clock and color changing
+
 class DigitalClock {
   constructor(element) {
     this.element = element;
@@ -29,7 +208,7 @@ class DigitalClock {
     const minuteFormatted = parts.minute.toString().padStart(2, "0");
     const timeFormatted = `${parts.hour}: ${minuteFormatted}`;
     const amPm = parts.isAm ? "AM" : "PM";
-    const amPmColorChange = parts.isAm ? "#D17173" : "#8E8971";
+    const amPmColorChange = parts.isAm ? "#F8C088" : "#D17173";
     const greeting = parts.morning ? "Good Morning" : "Good afternoon";
     document.querySelector("body").style.backgroundColor = amPmColorChange;
     this.element.querySelector(".clock-Time").textContent = timeFormatted;
@@ -136,11 +315,11 @@ $(document).ready(function () {
     $("#purchase-confirm1").hide();
 
   })
-  
-  if (window.location.pathname == "/Marketplace.html"){
-     loadSeeds()
-   }
- 
+
+  if (window.location.pathname == "/Marketplace.html") {
+    loadSeeds()
+  }
+
 
   $("#Deduct5").on("click", function (e) {
     e.preventDefault();
@@ -203,8 +382,8 @@ $(document).ready(function () {
     }
 
     $.ajax(settings).done(function (response) {
-        $("#plantsCount").html(response.length);
-        $("#plantsCount2").html(response.length);
+      $("#plantsCount").html(response.length);
+      $("#plantsCount2").html(response.length);
       for (var i = 0; i < response.length && i < limit; i++) {
         document.getElementById("pills-home").innerHTML += `                    
         <div class="window">
@@ -289,12 +468,12 @@ $(document).ready(function () {
   });
 
 
-if (window.location.pathname == "/checklist.html"){
- loadList()  
-}
+  if (window.location.pathname == "/checklist.html") {
+    loadList()
+  }
 
 
- 
+
   loadCoins()
   $("#myForm").hide();
   $("#add-update-msg").hide();
