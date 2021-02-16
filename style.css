@@ -15,6 +15,7 @@ html {
   h1 {
     font-size: 40px;
     text-decoration: none;
+    color: white;
   }
 
   h2 {
@@ -28,17 +29,71 @@ html {
   }
 
   body {
-    background-color: #63BCCC;
+    background-color:none;
     text-decoration: none;
     font-family: 'Jost', sans-serif;
 
   }
 
+  main{
+    font-family: 'Jost', sans-serif;
+  }
+/*Animation Styling*/
+.intro{
+  background-color:black;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.slider{
+  background-color:#555;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform: translateY(100%);
+}
+
+.intro-text{
+  color: white;
+  font-size: 1rem;
+}
+
+.hide{
+  background-color: black;
+  overflow: hidden;
+}
+
+.hide span{
+  transform: translateY(100%);
+  display: inline-block;
+
+}
+
+.greeting{
+  color: white;
+}
+
+.plantsTitle{
+  color: white;
+}
 .time{
   margin-top: -2%;
   margin-left: -4%;
 }
 .clock{
+  color: white;
   margin: 4%;
 }
 
@@ -280,6 +335,7 @@ border-radius: 10px;
 
   .content {
     padding: 6%;
+  
   }
 
   .currentLocation {
@@ -324,7 +380,7 @@ border-radius: 10px;
 
   }
 
-  .checklistSmall {
+  .checklistSmall a{
     margin-top: 5%;
     padding: 5%;
     background-color: white;
@@ -336,6 +392,7 @@ border-radius: 10px;
   }
 
   .arrow {
+    margin-top: -17%;
     text-align: right;
   }
 

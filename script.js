@@ -1,5 +1,12 @@
 //Id consultation
+//intro animation
 
+function FirstAnimation(){
+const tl =gsap.timeline({defaults: {ease:"power1.out"}})
+tl.to('.text',{y:"0%", duration: 1, stagger: 0.26});
+tl.to(".slider",{y:"-100%", duration: 1.5, delay : 0.4});
+tl.to(".intro",{y: "-100%", duration : 1}, "-=.5");
+tl.fromTo(".name",{opacity:0},{opacity:1 , duration: 2},"-=.5" )}
 
 //clock and color changing
 class DigitalClock {
@@ -67,7 +74,7 @@ $(document).ready(function () {
   $("#purchase-confirm2").hide();
   $("#purchase-notice").hide();
   //shop page
-  $("#Seed1").click(function (e) {
+  $("#Seed1").on("click", function (e) {
     e.preventDefault();
     $("#purchase-confirm1").show();
   })
@@ -124,13 +131,16 @@ $(document).ready(function () {
 
 
 
-  $("#close1").click(function (e) {
+  $("#close1").on("click", function (e) {
     e.preventDefault();
     $("#purchase-confirm1").hide();
 
   })
-
-  loadSeeds()
+  
+  if (window.location.pathname == "/Marketplace.html"){
+     loadSeeds()
+   }
+ 
 
   $("#Deduct5").on("click", function (e) {
     e.preventDefault();
@@ -279,10 +289,12 @@ $(document).ready(function () {
   });
 
 
+if (window.location.pathname == "/checklist.html"){
+ loadList()  
+}
 
 
-
-  loadList()
+ 
   loadCoins()
   $("#myForm").hide();
   $("#add-update-msg").hide();
