@@ -29,108 +29,129 @@ html {
   }
 
   body {
-    background-color:none;
+    background-color: #F8C088;
     text-decoration: none;
     font-family: 'Jost', sans-serif;
+    color: white;
 
   }
 
-  main{
+  main {
     font-family: 'Jost', sans-serif;
   }
-/*Animation Styling*/
-/*Index page*/
-.intro{
-  background-color:black;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-.slider1{
-  background-color:#555;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  transform: translateY(100%);
-}
 
-.intro-text{
-  color: white;
-  font-size: 1rem;
-}
+  /*Animation Styling*/
+  /*Index page*/
+  .logo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 5%;
 
-.hide{
-  background-color: black;
-  overflow: hidden;
-}
-
-.hide span{
-  transform: translateY(100%);
-  display: inline-block;
-
-}
-
-/*tutorial page*/
-.hide2{
-  background-color:none;
-  overflow: hidden;
-}
-
-.hide2 span{
-  transform: translateY(100%);
-  display: inline-block;
-
-}
+    border-radius: 15px;
 
 
-/*Home page*/
+  }
 
-.slider2{
-  background-color:white;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 5;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  
-}
+  .intro {
+    background-color: #D17173;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .text {
+    color: none;
+  }
+
+  .slider1 {
+    background-color: #F8C088;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translateY(100%);
+
+  }
+
+  .intro-text {
+
+    font-size: 1rem;
+  }
+
+  .hide {
+    background-color: #D17173;
+    overflow: hidden;
+  }
+
+  .hide span {
+    transform: translateY(100%);
+    display: inline-block;
+
+  }
+
+  /*tutorial page*/
+  .hide2 {
+    background-color: none;
+    overflow: hidden;
+  }
+
+  .hide2 span {
+    transform: translateY(100%);
+    display: inline-block;
+
+  }
+
+
+  /*Home page*/
+
+  .slider2 {
+    background-color: rgba(255, 255, 255, 0.6);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 5;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+
+
+  }
 
 
 
 
 
 
-.greeting{
-  color: white;
-}
+  .greeting {}
 
-.plantsTitle{
-  color: white;
-}
-.time{
-  margin-top: -2%;
-  margin-left: -4%;
-}
-.clock{
-  color: white;
-  margin: 4%;
-}
+  .plantsTitle {}
+
+  .time {
+    margin-top: -2%;
+    margin-left: -4%;
+  }
+
+  .clock {
+
+    margin: 4%;
+  }
 
 
   .clock-Time {
@@ -139,9 +160,10 @@ html {
     float: left;
   }
 
-  #none{
+  .none {
     display: none;
   }
+
   /* The switch - the box around the slider */
   .switch {
     position: relative;
@@ -229,28 +251,29 @@ html {
   }
 
   .navbar {
-    background-color: none;
+
     padding: 5%;
     margin: 2%;
     margin-right: 4%;
     overflow: hidden;
     position: fixed;
     bottom: 0;
-    width: 90%;
+    width: 85%;
     z-index: 20;
+
 
   }
 
   .behindNav {
-    background-color: white;
-    overflow: hidden;
+    background-color: rgba(255, 255, 255, 0.3);
+    margin-bottom: 4%;
     position: fixed;
     bottom: 0;
-    z-index: 10;
+    z-index: 5;
     width: 90%;
     height: 50px;
     border-radius: 200px;
-    margin: 2%;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
 
   }
 
@@ -259,7 +282,7 @@ html {
   .navbar a {
     float: left;
     display: block;
-    color: #f2f2f2;
+    color: black;
     text-align: center;
     padding: 14px 16px;
     text-decoration: none;
@@ -269,8 +292,8 @@ html {
   /* Change the color of links on hover */
   .navbar a:hover {
     border-radius: 200px;
-    background-color: grey;
-    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+
 
 
   }
@@ -278,44 +301,49 @@ html {
   /* Add a color to the active/current link */
   a.active {
     height: 3px;
-    width: 50px;
+    width: 49px;
     border-radius: 200px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.6);
 
-    border-color: #63BCCC;
     position: relative;
     z-index: 1;
-    color: black;
+
     padding: 10px 16px;
     padding-bottom: 13%;
     margin-bottom: 0px;
-
+    margin-bottom: 4%;
   }
+
 
   .name {
     display: flex;
     justify-content: center;
     align-items: center;
-    color: white;
+
     margin-top: 60%;
     text-decoration: none;
 
   }
 
-  .begin {
+
+  #begin a {
     display: flex;
     justify-content: center;
     align-items: center;
+
     color: white;
     margin-top: 20%;
     text-decoration: none;
     font-size: 25px;
 
+
   }
 
-  .link {
+
+  .link a {
     position: relative;
     z-index: 30;
+    text-decoration: none;
   }
 
   .logIn {
@@ -348,44 +376,46 @@ html {
     width: 100%;
 
   }
-/*Tutorial page*/
-.skip{
-text-align: end;
-color: white;
-}
 
-.allInstructions{
-  margin-top: 15%;
-  padding: 8%;
-  font-size: 18px;
-  color: white;
- 
-}
+  /*Tutorial page*/
+  .skip {
+    text-align: end;
 
-.mainInstructions{
-  margin-top: 15%;
-  padding: 3%;
-  line-height: 2;
-}
+  }
 
-.next{
-  position: fixed;
-  bottom:0;
-  right: 0;
-  text-align: center;
-margin: 6%;
-background-color: white;
-width: 10%;
-height: 4%;
-border-radius: 10px;
-border: none;
-}
+  .allInstructions {
+    margin-top: 15%;
+    padding: 8%;
+    font-size: 18px;
+
+
+  }
+
+  .mainInstructions {
+    margin-top: 15%;
+    padding: 3%;
+    line-height: 2;
+  }
+
+  .next {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    text-align: center;
+    margin: 6%;
+    background-color: white;
+    width: 10%;
+    height: 4%;
+    border-radius: 10px;
+    border: none;
+  }
+
   /*home page*/
 
 
   .content {
     padding: 6%;
-  
+
   }
 
   .currentLocation {
@@ -402,6 +432,17 @@ border: none;
     width: 19%;
   }
 
+  .icon {
+    width: 30px;
+    display: flex;
+    float: left;
+
+  }
+
+  .points {
+    float: left;
+  }
+
   .inventory {
     margin-top: 20px;
     border-radius: 10px;
@@ -410,35 +451,51 @@ border: none;
   }
 
   .firstPage {
-    display: flex;  
+    display: flex;
     flex-direction: column;
     align-items: center;
-  margin-top: 5%;
-  
- 
+    margin-top: 5%;
+
+
   }
 
   .homePlant {
-    display: flex;   
+    display: flex;
     flex-direction: column;
     align-items: center;
     width: 90%;
     height: 277px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 15px;
- 
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+
 
   }
 
-  .checklistSmall a{
+  .homePlantPlant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 50%;
+    margin: 5%;
+
+    border-radius: 15px;
+
+
+  }
+
+  .checklistSmall a {
     margin-top: 5%;
     padding: 5%;
-    background-color: white;
+    color: white;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 15px;
     height: 100px;
     text-decoration: none;
     display: block;
-    color: #212B57;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+
   }
 
   .arrow {
@@ -474,7 +531,7 @@ border: none;
   .home {
     background-color: black;
     border-radius: 300px;
-    color: white;
+
     font-size: 17px;
     width: 100%;
 
@@ -492,6 +549,7 @@ border: none;
     margin-right: 1%;
     margin-left: 1%;
   }
+
   #plantsCount2 {
     float: left;
     margin-right: 1%;
@@ -522,8 +580,8 @@ border: none;
   }
 
   .nav-item {
-    margin: 12px;   
-    color: black;
+    margin: 12px;
+
 
   }
 
@@ -531,28 +589,31 @@ border: none;
     text-align: center;
     height: 40px;
     width: fit-content;
-    color:white;
+
 
   }
 
-
-  .coins {
-    background-color: white;
-    border-radius: 10px;
-    text-align: center;
-    margin: 5%;
-
+  #points {
+    padding-top: 20%;
+    padding-left: 5%;
+    float: left;
   }
 
   .coins2 {
 
-    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(255, 255, 255, 0.3);
     border-radius: 10px;
-    text-align: center;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
+    text-align: left;
     margin-left: 3%;
-    width: 50px;
+    width: 70px;
+    height: 50px;
     float: left;
-    margin-right: 10%;
+    margin-right: 5%;
+
 
   }
 
@@ -562,9 +623,11 @@ border: none;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: white;
+    background-color: rgba(255, 255, 255, 0.3);
+
     width: 70%;
     height: 50px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   }
 
 
@@ -633,6 +696,7 @@ border: none;
     background-color: white;
     min-height: 600px;
     margin-top: 7%;
+    color: black;
 
 
   }

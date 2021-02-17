@@ -208,8 +208,16 @@ class DigitalClock {
     const minuteFormatted = parts.minute.toString().padStart(2, "0");
     const timeFormatted = `${parts.hour}: ${minuteFormatted}`;
     const amPm = parts.isAm ? "AM" : "PM";
+    const amPmAllTextColorChange = parts.isAm ? "black" : "white";
+    const amPmSlideColorChange = parts.isAm ? "#D17173" : "#F8C088";
+    const amPmHideColorChange = parts.isAm ? "#F8C088" : "#D17173";
+    const amPmSliderColorChange = parts.isAm ? "#F8C088" : "#D17173";
     const amPmColorChange = parts.isAm ? "#F8C088" : "#D17173";
     const greeting = parts.morning ? "Good Morning" : "Good afternoon";
+    document.querySelector(".slider1").style.backgroundColor = amPmSlideColorChange;
+    document.querySelector(".hide").style.backgroundColor = amPmHideColorChange;
+    document.querySelector(".intro").style.backgroundColor = amPmSliderColorChange;
+    document.querySelector("body").style.color = amPmAllTextColorChange;
     document.querySelector("body").style.backgroundColor = amPmColorChange;
     this.element.querySelector(".clock-Time").textContent = timeFormatted;
     this.element.querySelector(".clock-ampm").textContent = amPm;
@@ -274,7 +282,7 @@ $(document).ready(function () {
     let settings = {
       "async": true,
       "crossDomain": true,
-      "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
+      "url": `https://forgetmenot-7aac.restdb.io/rest/coins/${id}`,
       "method": "DELETE",
       "headers": {
         "content-type": "application/json",
@@ -300,8 +308,7 @@ $(document).ready(function () {
       $("#addPoints").prop("disabled", false);
 
       //@TODO update frontend UI 
-      $("#add-coin-msg").show().fadeOut(3000);
-      $("#purchase-confirm1").hide();
+      $("#purchase-confirm1").show().fadeOut(3000);
       //update our list
       updateCoins();
 
