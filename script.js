@@ -253,6 +253,9 @@ clockObject.start()
 $(document).ready(function () {
   //Home page
   const APIKEY = "60150aff6adfba69db8b6b87";
+  if (window.location.pathname == "/home.html") {
+    loadSeeds2()
+  }
 
   notification()
 
@@ -409,6 +412,27 @@ $(document).ready(function () {
 
   }
 
+  function loadSeeds2(limit = 30, all = true) {
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://forgetmenot-7aac.restdb.io/rest/plants",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      },
+    }
+
+    $.ajax(settings).done(function (response) {
+      $("#plantsCount").html(response.length);
+
+    });
+
+
+  }
+
   /*$("#Deduct5").click(function (e) {
     e.preventDefault();
     deductCoins1()
@@ -477,6 +501,7 @@ $(document).ready(function () {
 
   if (window.location.pathname == "/checklist.html") {
     loadList()
+    loadSeeds2()
   }
 
 
