@@ -9,9 +9,17 @@ This project is an interactive website that
 - makes use of gamification features to subconsciously make them want to remember what they need to bring in order to get rewards in the game.
 
 ## Design Process
-This mobile website is for tech savvy users, catered towards teenagers and young adults.
+This mobile website is targeted towards tech savvy users, especially catered towards teenagers and young adults.
 
-The 
+The purpose of the targeted audience in using this mobile application is
+-  to remember to bring their items out of the house that might be small but be of great inconvenience if they forget to bring them out.
+  
+This mobile application encourages a good habit of keeping checklists by
+- employing the use of gamification features to motivate them to keep a checklist.
+
+As many users in general feel that keeping a checklist is very troublesome and a chore to do, this mobile application aims to tell users that making a checklist can be fun as well.
+
+- As a user, I would like a 
 Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:

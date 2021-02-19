@@ -1,4 +1,6 @@
 //Id consultation
+
+
 //All animation
 if (window.location.pathname == "/index.html") {
   FirstAnimation()
@@ -251,6 +253,7 @@ clockObject.start()
 //jquery
 
 $(document).ready(function () {
+
   //Home page
   const APIKEY = "60150aff6adfba69db8b6b87";
 
