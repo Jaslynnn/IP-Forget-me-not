@@ -253,26 +253,19 @@ clockObject.start()
 $(document).ready(function () {
   //Home page
   const APIKEY = "60150aff6adfba69db8b6b87";
+
   if (window.location.pathname == "/home.html") {
     loadSeeds2()
   }
 
-  notification()
-
-  //
-  $("#purchase-confirm1").hide();
-  $("#purchase-confirm2").hide();
-  $("#purchase-notice").hide();
-  //shop page
-  $("#Seed1").on("click", function (e) {
-    e.preventDefault();
-    $("#purchase-confirm1").show();
-  })
+  loadCoins()
+  $("#myForm").hide();
+  $("#add-update-msg").hide();
+  $("#add-coin-msg").hide();
 
 
-  //deduct coins and add a plant to inventory  
-  //Delete coins
-  $("#Deduct5").on("click", function (e) {
+  //Add coins
+  $("#addPoints").on("click", function (e) {
     e.preventDefault();
 
     let coins = 5
@@ -285,8 +278,8 @@ $(document).ready(function () {
     let settings = {
       "async": true,
       "crossDomain": true,
-      "url": `https://forgetmenot-7aac.restdb.io/rest/coins/${id}`,
-      "method": "DELETE",
+      "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
+      "method": "POST",
       "headers": {
         "content-type": "application/json",
         "x-apikey": APIKEY,
@@ -298,7 +291,7 @@ $(document).ready(function () {
       "beforeSend": function () {
         //@TODO use loading bar instead
         //disable our button or show loading bar
-        $("#Deduct5").prop("disabled", true);
+        $("#addPoints").prop("disabled", true);
 
       }
 
@@ -311,11 +304,114 @@ $(document).ready(function () {
       $("#addPoints").prop("disabled", false);
 
       //@TODO update frontend UI 
+      $("#add-coin-msg").show().fadeOut(3000);
+      //update our list
+      updateCoins();
+    });
+  });
+
+
+  function loadCoins(limit = 30, all = true) {
+    //load Coins upon log in
+    //[STEP 7]: Create our AJAX settings
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      },
+    }
+
+    $.ajax(settings).done(function (response) {
+
+      $("#points").html(response.length * 5);
+      $("#points2").html(response.length * 5);
+
+
+    });
+
+  }
+
+
+  function updateCoins(limit = 30, all = true) {
+    //load Coins upon log in
+    let settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
+      "method": "GET",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      },
+    }
+
+    $.ajax(settings).done(function (response) {
+
+      $("#points").html(response.length * 5);
+      for (var i = 0; i < response.length && i < limit; i++) {
+      let Coinsid = `${response[i]._id}`
+      return Coinsid
+      }
+
+    });
+
+  }
+
+
+
+  //
+  $("#purchase-confirm1").hide();
+  $("#purchase-confirm2").hide();
+  $("#purchase-notice").hide();
+  //shop page
+  $("#Seed1").on("click", function (e) {
+    e.preventDefault();
+    $("#purchase-confirm1").show();
+  })
+
+  let id = updateCoins()
+  //deduct coins and add a plant to inventory  
+  //Delete coins
+  $("#Deduct5").on("click", function (e) {
+    e.preventDefault();
+    deductCoins()
+
+function deductCoins(id){
+
+    var settings = {
+      "async": true,
+      "crossDomain": true,
+      "url": "https://forgetmenot-7aac.restdb.io/rest/coins/${id}",
+      "method": "DELETE",
+      "headers": {
+        "content-type": "application/json",
+        "x-apikey": APIKEY,
+        "cache-control": "no-cache"
+      }
+    }
+    
+    $.ajax(settings).done(function (response) {
+
+      $("#addPoints").prop("disabled", false);
+
+      //@TODO update frontend UI 
       $("#purchase-confirm1").show().fadeOut(3000);
       //update our list
+      for (var i = 0; i < response.length && i < limit; i++) {
+      let id =  `${response[i]._id}` 
+      return id
+      }
+     
       updateCoins();
 
     });
+  }
   });
 
 
@@ -506,109 +602,6 @@ $(document).ready(function () {
 
 
 
-  loadCoins()
-  $("#myForm").hide();
-  $("#add-update-msg").hide();
-  $("#add-coin-msg").hide();
-
-
-  //Add coins
-  $("#addPoints").on("click", function (e) {
-    e.preventDefault();
-
-    let coins = 5
-
-    let jsondata = {
-      "coins": coins,
-
-    };
-
-    let settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
-      "method": "POST",
-      "headers": {
-        "content-type": "application/json",
-        "x-apikey": APIKEY,
-        "cache-control": "no-cache"
-      },
-
-      "processData": false,
-      "data": JSON.stringify(jsondata),
-      "beforeSend": function () {
-        //@TODO use loading bar instead
-        //disable our button or show loading bar
-        $("#addPoints").prop("disabled", true);
-
-      }
-
-    }
-
-
-    $.ajax(settings).done(function (response) {
-      console.log(response);
-
-      $("#addPoints").prop("disabled", false);
-
-      //@TODO update frontend UI 
-      $("#add-coin-msg").show().fadeOut(3000);
-      //update our list
-      updateCoins();
-    });
-  });
-
-
-  function loadCoins(limit = 30, all = true) {
-    //load Coins upon log in
-    //[STEP 7]: Create our AJAX settings
-    let settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
-      "method": "GET",
-      "headers": {
-        "content-type": "application/json",
-        "x-apikey": APIKEY,
-        "cache-control": "no-cache"
-      },
-    }
-
-    $.ajax(settings).done(function (response) {
-
-      $("#points").html(response.length * 5);
-      $("#points2").html(response.length * 5);
-
-
-    });
-
-  }
-
-
-  function updateCoins(limit = 30, all = true) {
-    //load Coins upon log in
-    let settings = {
-      "async": true,
-      "crossDomain": true,
-      "url": "https://forgetmenot-7aac.restdb.io/rest/coins",
-      "method": "GET",
-      "headers": {
-        "content-type": "application/json",
-        "x-apikey": APIKEY,
-        "cache-control": "no-cache"
-      },
-    }
-
-    $.ajax(settings).done(function (response) {
-
-      $("#points").html(response.length * 5);
-
-
-    });
-
-  }
-
-
 
 
 
@@ -680,11 +673,12 @@ $(document).ready(function () {
     $.ajax(settings).done(function (response) {
 
       for (var i = 0; i < response.length && i < limit; i++) {
-        document.getElementById("list").innerHTML += `${[i+1]}.${response[i].checklist}<br>`
-
-
+        let id = `${response[i]._id}`
+        document.getElementById("list").innerHTML += `${[i+1]}.${response[i].checklist}<br> data-id ='${response[i]._id}'`
         $("#totalItems").html(response.length);
+     return id
       }
+    
     });
   }
 
