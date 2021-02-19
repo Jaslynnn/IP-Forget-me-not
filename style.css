@@ -15,7 +15,7 @@ html {
   h1 {
     font-size: 40px;
     text-decoration: none;
-    color: white;
+
   }
 
   h2 {
@@ -26,6 +26,15 @@ html {
   h3 {
     text-decoration: none;
     color: white;
+  }
+  h6{
+    font-size: 25px;
+    color: black;
+    text-align: left;
+    position: absolute;
+    left: 0;
+    margin-left: 20%;
+    margin-top: 4%;
   }
 
   body {
@@ -453,6 +462,9 @@ html {
 
   }
 
+  .icon2 {
+    width: 45px;
+  }
   .nav-bar-icons{
     margin-top: 10%;
     width: 22px; height: 22px;
@@ -484,10 +496,10 @@ html {
     margin-top: 4%;
     width: 80%;
     height: 277px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.9);
     border-radius: 15px;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
-
+    text-align: left;
 
   }
 
@@ -498,17 +510,30 @@ html {
     justify-content: center;
     width: 50%;
     margin: 5%;
+    text-align: left;
 
     border-radius: 15px;
 
 
   }
+  .Plant {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin: 5%;
+    text-align: left;
 
+    border-radius: 15px;
+
+
+  }
   .checklistSmall a {
     margin-top: 5%;
     padding: 5%;
     color: white;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 15px;
     height: 100px;
     text-decoration: none;
@@ -518,18 +543,20 @@ html {
   }
 
   .arrow {
-    margin-top: -17%;
+    margin-top: -24%;
     text-align: right;
+    margin-right: 10%;
+
   }
 
   .care {
-    background-color: white;
+    background-color: darkolivegreen;
     border-radius: 200px;
     overflow: hidden;
     position: fixed;
     margin-bottom: 30%;
     bottom: 0;
-    color: #212B57;
+    color: white;
     font-size: 19px;
   }
 
@@ -605,6 +632,12 @@ html {
   }
 .nav-link{
 margin-bottom: -10px;
+color: white;
+}
+
+.btn-secondary{
+  background-color: darkolivegreen;
+  border-radius: 11px;
 }
   .nav-link.active {
     text-align: center;
@@ -625,7 +658,7 @@ margin-bottom: -10px;
     display: flex;
     justify-content: center;
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
     border-radius: 10px;
   
     text-align: left;
@@ -644,7 +677,7 @@ margin-bottom: -10px;
     justify-content: center;
     align-items: center;
     border-radius: 10px;
-    background-color: rgba(255, 255, 255, 0.3);
+    background-color: rgba(255, 255, 255, 0.4);
 
     width: 70%;
     height: 50px;
@@ -665,6 +698,9 @@ margin-bottom: -10px;
     margin: 3%;
     height: 220px;
     border-radius: 15px;
+    padding: 5%;
+    padding-top: 10%;
+
     float: left;
     color: black;
   }
@@ -734,7 +770,7 @@ margin-bottom: -10px;
     position: fixed;
     bottom: 80px;
     right: 28px;
-    width: 20%;
+    width: 16%;
     padding-bottom: 5px;
     border-radius: 300px;
     z-index: 2;
@@ -761,6 +797,7 @@ margin-bottom: -10px;
     top: 0;
     border-radius: 10px;
     right: 0;
+    color: black;
     background-color: white;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.1);
   }
@@ -785,12 +822,12 @@ margin-bottom: -10px;
 
   /* Set a style for the submit/login button */
   .form-container .btn {
-    background-color: green;
+    background-color: darkolivegreen;
     color: white;
     border-radius: 35px;
     border: none;
     cursor: pointer;
-    width: 18%;
+    width: 23%;
     padding: 0;
     padding-top: 1%;
 

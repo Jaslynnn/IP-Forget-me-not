@@ -138,8 +138,8 @@ function HomeAnimation() {
 
   tl.to(".slider2", {
     x: "-100%",
-    duration: 1.2,
-    delay: .9
+    duration: 1.3,
+    delay: 1.1
   });
 
 }
@@ -153,8 +153,8 @@ function MarketplaceAnimation() {
 
   tl.to(".slider2", {
     x: "-100%",
-    duration: 2,
-    delay: 1
+    duration: 2.2,
+    delay: 2.1
   });
 
 }
@@ -169,7 +169,7 @@ function ChecklistAnimation() {
   tl.to(".slider2", {
     x: "-100%",
     duration: 2,
-    delay: 1.5
+    delay: 2
   });
 
 }
@@ -183,8 +183,8 @@ function SettingsAnimation() {
 
   tl.to(".slider2", {
     x: "-100%",
-    duration: .5,
-    delay: 0
+    duration: 1.5,
+    delay: 1
   });
 
 }
@@ -358,8 +358,8 @@ $(document).ready(function () {
 
       $("#points").html(response.length * 5);
       for (var i = 0; i < response.length && i < limit; i++) {
-      let Coinsid = `${response[i]._id}`
-      return Coinsid
+
+
       }
 
     });
@@ -407,8 +407,8 @@ function deductCoins(id){
       $("#purchase-confirm1").show().fadeOut(3000);
       //update our list
       for (var i = 0; i < response.length && i < limit; i++) {
-      let id =  `${response[i]._id}` 
-      return id
+
+   
       }
      
       updateCoins();
@@ -496,10 +496,10 @@ function deductCoins(id){
       for (var i = 0; i < response.length && i < limit; i++) {
         document.getElementById("pills-home").innerHTML += `                    
         <div class="window">
-        <p>Seed ${i+1}
+        <p>${i+1}<img src="Images/seedling.png" class=Plant alt="Checklist icon"> 
 
         </p>
-        <button type="submit" class="btn btn-secondary" id= story${i} >Backstory</button>
+       
         </div>`
 
 
@@ -677,9 +677,9 @@ function deductCoins(id){
 
       for (var i = 0; i < response.length && i < limit; i++) {
         let id = `${response[i]._id}`
-        document.getElementById("list").innerHTML += `${[i+1]}.${response[i].checklist}<br> data-id ='${response[i]._id}'`
+        document.getElementById("list").innerHTML += `${[i+1]}.${response[i].checklist}<br>`
         $("#totalItems").html(response.length);
-     return id
+
       }
     
     });
@@ -717,33 +717,12 @@ function deductCoins(id){
 
 
 
-  /* function to add points*/
-  /*$("#addPoints").click(function (e) {
-    e.preventDefault();
-    addition()
-    $("#add-coin-msg").show().fadeOut(4000);
-  })
-
-  //Settings page
-  $("#homeLocator").click(function (e) {
-    recordPosition()
-  })
-
-*/
 })
 
 
 //End of jquery, all the javascript functions
 
-//shop
-//Buying of first seed
-/*function deductCoins1() {
-  let coins = localStorage.getItem("Points")
-  let finalPoints = parseInt(coins) - parseInt('5')
-  localStorage.setItem("Points", finalPoints);
-  document.getElementById("points").innerHTML = finalPoints
-}
-*/
+
 
 //Checklist Page
 
@@ -756,120 +735,6 @@ function closeForm() {
 }
 
 
-/*function addition() {
-
-  let points = localStorage.getItem("Points")
-
-  if (isNaN(points)) {
-    let points = 0
-    localStorage.setItem("Points", points);
-    let oldpoints = localStorage.getItem("Points")
-    let oldPoints = parseInt(oldpoints)
-    let newPoints = oldPoints + parseInt("5")
-    localStorage.setItem("Points", newPoints);
-    document.getElementById("points").innerHTML += newPoints
-
-  } else {
-
-    localStorage.setItem("Points", points);
-    let oldpoints = localStorage.getItem("Points")
-    let oldPoints = parseInt(oldpoints)
-    let newPoints = oldPoints + parseInt("5")
-    localStorage.setItem("Points", newPoints);
-    document.getElementById("points").innerHTML = newPoints
-  }
-
-
-}
-
-*/
-//Settings page
-//Beginning will run the record current position
-//when pressed the home button the record position activates
-//big function has-
-//Record position inactive function
-//current position inactive function
-//If comparison if Record == current, show alert
-
-var id, target, options;
-
-function success(pos) {
-  var crd = pos.coords;
-
-  if (target.latitude === crd.latitude && target.longitude === crd.longitude) {
-    console.log('Congratulations, you reached the target');
-    navigator.geolocation.clearWatch(id);
-  }
-}
-
-function error(err) {
-  console.warn('ERROR(' + err.code + '): ' + err.message);
-}
-
-target = {
-  latitude: 0,
-  longitude: 0
-};
-
-options = {
-  enableHighAccuracy: false,
-  timeout: 5000,
-  maximumAge: 0
-};
-
-id = navigator.geolocation.watchPosition(success, error, options);
-
-function notification() {
-
-  var home = recordPosition()
-  var current = currentLocation()
-
-  currentLocation()
-  if (home == current) {
-    alert("would you like to proceed the the checklist page?")
-
-  } else {
-    console.log("nothing")
-  }
-
-  function recordPosition() {
-    const successCallback = (position) => {
-      console.log(position);
-    };
-    const errorCallback = (error) => {
-      console.error(error);
-    };
-
-    const watchId1 = navigator.geolocation.getCurrentPosition(successCallback, errorCallback, {
-      enableHighAccuracy: true,
-      timeout: 7000
-    });
-
-    return watchId1
-
-  }
-
-  function currentLocation() {
-    const successCallback = (position) => {
-      console.log(position);
-    };
-    const errorCallback = (error) => {
-      console.error(error);
-    };
-
-    const watchId2 = navigator.geolocation.watchPosition(successCallback, errorCallback, {
-      enableHighAccuracy: true,
-      timeout: 7000
-    });
-    return watchId2
-
-  }
-  // record the user's house door location
-
-
-  // record the user's current location
 
 
 
-
-}

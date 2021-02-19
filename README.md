@@ -1,9 +1,5 @@
-# IP-Forget-me-not
-
-
-https://cdnjs.com/libraries/gsap
-
 # IP -Forget-Me-Not
+Warning- cannot be viewed in github because somehow gsap does not work there
 This project is an interactive website that 
 - reminds tech savvy users,eg; teenagers and young adults to not forget to bring their things when they leave their house 
 - makes use of gamification features to subconsciously make them want to remember what they need to bring in order to get rewards in the game.
@@ -19,7 +15,7 @@ This mobile application encourages a good habit of keeping checklists by
 
 As many users in general feel that keeping a checklist is very troublesome and a chore to do, this mobile application aims to tell users that making a checklist can be fun as well.
 
-- As a user, I would like a 
+- As a user, I would like a fun system that encourages me to create checklists and remember to bring things 
 Provide us insights about your design process, focusing on who this website is for, what it is that they want to achieve and how your project is the best way to help them achieve these things.
 
 In particular, as part of this section we recommend that you provide a list of User Stories, with the following general structure:
@@ -31,7 +27,12 @@ Include the Adobe XD wireframe as a folder. You can include the XD share url.
 
 ## Features
 
-In this section, you should go over the different parts of your project, and describe each in a sentence or so.
+- color of the animations and backgrounbd change with time
+- contains a digital clock
+- animation employed using lottie and gsap to keep users distracted while the application is loading
+- stores a checklist using nosql
+- stores user information when they sign up
+
  
 ### Existing Features
 - Feature 1 - allows users X to achieve Y, by having them fill out Z
@@ -40,7 +41,9 @@ In this section, you should go over the different parts of your project, and des
 In addition, you may also use this section to discuss plans for additional features to be implemented in the future:
 
 ### Features Left to Implement
-- Another feature idea
+- geolocation Api to notify users when they leave the house
+- ability to delete items from the no sql database
+- ability to link the user accounts accounts together
 
 ## Technologies Used
 
@@ -48,32 +51,45 @@ In this section, you should mention all of the languages, frameworks, libraries,
 
 - [JQuery](https://jquery.com)
     - The project uses **JQuery** to simplify DOM manipulation.
-
+- [gsap](https://cdnjs.com/libraries/gsap)
+  The project uses **gsap** for animations
+- [bootstrap](https://getbootstrap.com/)
+  This project uses **bootstrap** for the style
+- [lottie](https://airbnb.design/lottie/)
+  This project uses **lottie** to create animations
 
 ## Testing
 
-For any scenarios that have not been automated, test the user stories manually and provide as much detail as is relevant. A particularly useful form for describing your testing process is via scenarios, such as:
-
-1. Contact form:
-    1. Go to the "Contact Us" page
+1. log in form:
+    1. Go to the "Log in" page
     2. Try to submit the empty form and verify that an error message about the required fields appears
     3. Try to submit the form with an invalid email address and verify that a relevant error message appears
-    4. Try to submit the form with all inputs valid and verify that a success message appears.
+    4. Try to submit the form with all inputs valid and verify that a success message appears. (failed)
+   
+2. Gaining of plants:
+   - try to buy a plant from the marketplace and see if it appears in my plants
 
-In addition, you should mention in this section how your project looks and works on different browsers and screen sizes.
+3. Deduction of coins:
+   - try to buy a plant from the marketplace and see if coins are deducted.(failed)
 
-You should also mention in this section any interesting bugs or problems you discovered during your testing, even if you haven't addressed them yet.
 
-If this section grows too long, you may want to split it off into a separate file and link to it from here.
+my project only works on mobile screens as this is supposed to be a mobile application.
+
+The nav bar has some bugs that causes the div to be shown weirdly.
+
+I have not addressed the delete info from the database and have been trying to do so for the past week.
+
 
 ## Credits
-
+Jaslyn for all the programming
+Jiayi for designing the icons and doing the assets
 ### Content
-- The text for section Y was copied from the [Wikipedia article Z](https://en.wikipedia.org/wiki/Z)
+- The text for the content was written by me
 
 ### Media
-- The photos used in this site were obtained from ...
+- The images used in this site were obtained from Jiayi's drawing
 
 ### Acknowledgements
-
-- I received inspiration for this project from X
+- Thank you to Jiayi for creating the nav bar icons.
+- Thank you so much to Ms Dai for helping me and advising me alot about this project.
+- Thank you Mr Malcolm for giving some suggestions to help me with my project.
